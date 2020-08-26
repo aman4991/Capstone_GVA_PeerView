@@ -15,6 +15,7 @@ class MapViewController: UIViewController {
     var delegate: Callbacks?
     var coorindates: CLLocationCoordinate2D?
     var locationTitle: String?
+    @IBOutlet weak var addButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,15 @@ class MapViewController: UIViewController {
         map.addGestureRecognizer(tap)
         if let c = coorindates
         {
+            if locationTitle == nil
+            {
+                locationTitle = "Unkown"
+            }
             showAnnotation(coordinates: c, title: locationTitle!)
+        }
+        if delegate == nil
+        {
+            self.navigationItem.rightBarButtonItems = nil
         }
         // Do any additional setup after loading the view.
     }

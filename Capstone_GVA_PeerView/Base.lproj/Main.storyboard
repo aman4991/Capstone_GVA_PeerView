@@ -430,6 +430,7 @@
                         <outlet property="profileImageView" destination="0I1-jA-WNy" id="JYk-el-NfO"/>
                         <outlet property="settingsUIImageView" destination="ZTW-nq-pM6" id="46C-mN-nlB"/>
                         <segue destination="Ta1-fL-xW5" kind="show" identifier="toSettingsVC" id="R99-Qz-mLt"/>
+                        <segue destination="b7N-5p-sBS" kind="show" identifier="profileToMap" id="wpz-DM-dDi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8h-N6-kGC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -590,6 +591,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="lVj-hN-06Q" id="9MK-54-ftW"/>
                         <outlet property="map" destination="2ge-F5-nnQ" id="XBw-5Q-roc"/>
                     </connections>
                 </viewController>
@@ -646,6 +648,9 @@
             <point key="canvasLocation" x="138" y="931"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wpz-DM-dDi"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="doc.append" catalog="system" width="115" height="128"/>
         <image name="gear" catalog="system" width="128" height="119"/>

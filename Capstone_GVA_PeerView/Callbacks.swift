@@ -12,3 +12,7 @@ import MapKit
 protocol Callbacks {
     func setCoordinates(coordinates: CLLocationCoordinate2D, title: String)
 }
+
+protocol ToMove {
+    func moveToMap(coordinates: CLLocationCoordinate2D)
+}

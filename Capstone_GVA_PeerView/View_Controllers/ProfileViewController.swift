@@ -8,20 +8,22 @@
 
 import UIKit
 import Firebase
+import MapKit
 
 class ProfileViewController: ViewController {
-
+    
     @IBOutlet weak var settingsUIImageView: UIImageView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
-
+    var coordinates: CLLocationCoordinate2D?
+    
     var ref: DatabaseReference!
     var currentUser: User!
     var storageRef: StorageReference!
     var userData: [String:String] = [:]
     var posts: [Post] = []
     let cellIdentifier = "reusecell"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTapGestures()
@@ -37,16 +39,16 @@ class ProfileViewController: ViewController {
     func registerCollectionViewCells()
     {
         let custom_collection_view_cell = UINib(nibName: "PostCollectionViewCell", bundle: nil)
-
+        
         self.collectionView.register(custom_collection_view_cell, forCellWithReuseIdentifier: self.cellIdentifier)
     }
-
+    
     func getUserPosts()
     {
         let ref1 = Database.database().reference().child("Posts").child(currentUser.uid)
-
+        
         print(ref1)
-
+        
         ref1.observe(.childAdded) { (dataSnapshot) in
             print("dataSnapshot: \(dataSnapshot)")
             if let map = dataSnapshot.value as? [String:AnyObject]
@@ -58,14 +60,14 @@ class ProfileViewController: ViewController {
             self.collectionView.reloadData()
         }
     }
-
+    
     func setTapGestures()
     {
         let settingTap = UITapGestureRecognizer(target: self, action: #selector(settingsTapped))
         settingsUIImageView.isUserInteractionEnabled = true
         settingsUIImageView.addGestureRecognizer(settingTap)
     }
-
+    
     func setImageView()
     {
         profileImageView.layer.borderWidth = 1.0
@@ -74,11 +76,11 @@ class ProfileViewController: ViewController {
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
         profileImageView.clipsToBounds = true
     }
-
+    
     @objc func settingsTapped() {
-      performSegue(withIdentifier: "toSettingsVC", sender: self)
+        performSegue(withIdentifier: "toSettingsVC", sender: self)
     }
-
+    
     func getUserData()
     {
         ref.observe(.value, with: { snapshot in
@@ -96,12 +98,12 @@ class ProfileViewController: ViewController {
             }
         })
     }
-
+    
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
-
-
+    
+    
     func downloadImage(from url: URL) {
         print("Download Started")
         getData(from: url) { data, response, error in
@@ -113,7 +115,14 @@ class ProfileViewController: ViewController {
             }
         }
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let mvc = segue.destination as? MapViewController
+        {
+            mvc.coorindates = coordinates
+        }
+    }
+    
 }
 
 extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate
@@ -121,12 +130,20 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return posts.count
     }
-
-
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier, for: indexPath) as! PostCollectionViewCell
         cell.post = posts[indexPath.row]
-        print("return cell")
+        cell.delegate = self
         return cell
+    }
+}
+
+extension ProfileViewController: ToMove
+{
+    func moveToMap(coordinates: CLLocationCoordinate2D) {
+        self.coordinates = coordinates
+        performSegue(withIdentifier: "profileToMap", sender: self)
     }
 }

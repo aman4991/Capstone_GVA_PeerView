@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import MapKit
 
 class PostCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageview: UIImageView!
     @IBOutlet weak var textView: UITextView!
+    
+    var delegate: ToMove!
     
     var post: Post?
     {
@@ -22,11 +25,15 @@ class PostCollectionViewCell: UICollectionViewCell {
                 try textView.text = post?.text
                 if post?.image == nil
                 {
-                    imageview.isHidden = true
+                    imageview.image = UIImage(named: "placeholder")
                 }
                 else if let image = post?.image, image == ""
                 {
-                    imageview.isHidden = true
+                    imageview.image = UIImage(named: "placeholder")
+                }
+                else
+                {
+                    downloadImage(from: URL(string: post!.image!)!)
                 }
             }
             catch
@@ -42,7 +49,7 @@ class PostCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func showLocationTapped(_ sender: Any) {
-        print("tapped")
+        delegate.moveToMap(coordinates: CLLocationCoordinate2D(latitude: ((post?.lat ?? "0") as NSString).doubleValue, longitude: ((post?.lng ?? "0") as NSString).doubleValue))
     }
     
     override func layoutSubviews() {
@@ -67,4 +74,20 @@ class PostCollectionViewCell: UICollectionViewCell {
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
     }
     
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+
+
+    func downloadImage(from url: URL) {
+        print("Download Started")
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() { [weak self] in
+                self?.imageview.image = UIImage(data: data)
+            }
+        }
+    }
 }
