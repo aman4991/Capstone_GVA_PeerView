@@ -1,0 +1,6 @@
+framework module Pods_Capstone_GVA_PeerView {
+  umbrella header "Pods-Capstone_GVA_PeerView-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_Capstone_GVA_PeerView_Capstone_GVA_PeerViewUITests {
+  umbrella header "Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

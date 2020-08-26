@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>375927107814-l6ptr42g0tpvo8violi1sh9du0jr6h72.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.375927107814-l6ptr42g0tpvo8violi1sh9du0jr6h72</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBmHNojA_ysKtpu5MCRvUZfokrAbdgrZwA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>375927107814</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>varinder.Capstone-GVA-PeerView</string>
+	<key>PROJECT_ID</key>
+	<string>peerview-136c3</string>
+	<key>STORAGE_BUCKET</key>
+	<string>peerview-136c3.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:375927107814:ios:b1f02a16f99bc9eafd4b27</string>
+	<key>DATABASE_URL</key>
+	<string>https://peerview-136c3.firebaseio.com</string>
+</dict>
+</plist>

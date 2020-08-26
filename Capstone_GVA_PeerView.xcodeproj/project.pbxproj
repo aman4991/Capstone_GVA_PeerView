@@ -1,0 +1,764 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D08BCCB24F717DB00B5DD1E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCCA24F717DB00B5DD1E /* DashboardViewController.swift */; };
+		7D1087CE24E5D94E005692C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CD24E5D94E005692C9 /* AppDelegate.swift */; };
+		7D1087D024E5D94E005692C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */; };
+		7D1087D224E5D94E005692C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087D124E5D94E005692C9 /* ViewController.swift */; };
+		7D1087D524E5D94E005692C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D1087D324E5D94E005692C9 /* Main.storyboard */; };
+		7D1087D824E5D94E005692C9 /* Capstone_GVA_PeerView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087D624E5D94E005692C9 /* Capstone_GVA_PeerView.xcdatamodeld */; };
+		7D1087DA24E5D950005692C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D1087D924E5D950005692C9 /* Assets.xcassets */; };
+		7D1087DD24E5D950005692C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D1087DB24E5D950005692C9 /* LaunchScreen.storyboard */; };
+		7D1087E824E5D950005692C9 /* Capstone_GVA_PeerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087E724E5D950005692C9 /* Capstone_GVA_PeerViewTests.swift */; };
+		7D1087F324E5D950005692C9 /* Capstone_GVA_PeerViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087F224E5D950005692C9 /* Capstone_GVA_PeerViewUITests.swift */; };
+		9420864FA5ADF30F659801C4 /* Pods_Capstone_GVA_PeerView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835C200E7FE9AB24CA5B17D0 /* Pods_Capstone_GVA_PeerView.framework */; };
+		9D1D9EE05AE73E8785AA1595 /* Pods_Capstone_GVA_PeerViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDD8988B8D9AC09EDA10C5E /* Pods_Capstone_GVA_PeerViewTests.framework */; };
+		9D96058816F465CED190F82E /* Pods_Capstone_GVA_PeerView_Capstone_GVA_PeerViewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84C9E1F94E867A703F0B9EB /* Pods_Capstone_GVA_PeerView_Capstone_GVA_PeerViewUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7D1087E424E5D950005692C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D1087C224E5D94E005692C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D1087C924E5D94E005692C9;
+			remoteInfo = Capstone_GVA_PeerView;
+		};
+		7D1087EF24E5D950005692C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D1087C224E5D94E005692C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D1087C924E5D94E005692C9;
+			remoteInfo = Capstone_GVA_PeerView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05C20FD3D48F1F959ECCCB6B /* Pods-Capstone_GVA_PeerViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Capstone_GVA_PeerViewTests.release.xcconfig"; path = "Target Support Files/Pods-Capstone_GVA_PeerViewTests/Pods-Capstone_GVA_PeerViewTests.release.xcconfig"; sourceTree = "<group>"; };
+		3C4C820E036238C90B0D6CF1 /* Pods-Capstone_GVA_PeerViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Capstone_GVA_PeerViewTests.debug.xcconfig"; path = "Target Support Files/Pods-Capstone_GVA_PeerViewTests/Pods-Capstone_GVA_PeerViewTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4BDD8988B8D9AC09EDA10C5E /* Pods_Capstone_GVA_PeerViewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Capstone_GVA_PeerViewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D08BCCA24F717DB00B5DD1E /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		7D1087CA24E5D94E005692C9 /* Capstone_GVA_PeerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone_GVA_PeerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D1087CD24E5D94E005692C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7D1087D124E5D94E005692C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7D1087D424E5D94E005692C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7D1087D724E5D94E005692C9 /* Capstone_GVA_PeerView.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Capstone_GVA_PeerView.xcdatamodel; sourceTree = "<group>"; };
+		7D1087D924E5D950005692C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7D1087DC24E5D950005692C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7D1087DE24E5D950005692C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D1087E324E5D950005692C9 /* Capstone_GVA_PeerViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Capstone_GVA_PeerViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D1087E724E5D950005692C9 /* Capstone_GVA_PeerViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capstone_GVA_PeerViewTests.swift; sourceTree = "<group>"; };
+		7D1087E924E5D950005692C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D1087EE24E5D950005692C9 /* Capstone_GVA_PeerViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Capstone_GVA_PeerViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D1087F224E5D950005692C9 /* Capstone_GVA_PeerViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capstone_GVA_PeerViewUITests.swift; sourceTree = "<group>"; };
+		7D1087F424E5D950005692C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		835C200E7FE9AB24CA5B17D0 /* Pods_Capstone_GVA_PeerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Capstone_GVA_PeerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CD5262D4E56377FC28F0D8B /* Pods-Capstone_GVA_PeerView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Capstone_GVA_PeerView.release.xcconfig"; path = "Target Support Files/Pods-Capstone_GVA_PeerView/Pods-Capstone_GVA_PeerView.release.xcconfig"; sourceTree = "<group>"; };
+		AFDAB09A2E8F63DDE3B9356A /* Pods-Capstone_GVA_PeerView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Capstone_GVA_PeerView.debug.xcconfig"; path = "Target Support Files/Pods-Capstone_GVA_PeerView/Pods-Capstone_GVA_PeerView.debug.xcconfig"; sourceTree = "<group>"; };
+		C84C9E1F94E867A703F0B9EB /* Pods_Capstone_GVA_PeerView_Capstone_GVA_PeerViewUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Capstone_GVA_PeerView_Capstone_GVA_PeerViewUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9B194D38B02193F697AA057 /* Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests.debug.xcconfig"; path = "Target Support Files/Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests/Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E77C47E591005D0EFD3E4E4A /* Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests.release.xcconfig"; path = "Target Support Files/Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests/Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D1087C724E5D94E005692C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9420864FA5ADF30F659801C4 /* Pods_Capstone_GVA_PeerView.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D1087E024E5D950005692C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D1D9EE05AE73E8785AA1595 /* Pods_Capstone_GVA_PeerViewTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D1087EB24E5D950005692C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D96058816F465CED190F82E /* Pods_Capstone_GVA_PeerView_Capstone_GVA_PeerViewUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2EDB75A56D303306BBB1C697 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				835C200E7FE9AB24CA5B17D0 /* Pods_Capstone_GVA_PeerView.framework */,
+				C84C9E1F94E867A703F0B9EB /* Pods_Capstone_GVA_PeerView_Capstone_GVA_PeerViewUITests.framework */,
+				4BDD8988B8D9AC09EDA10C5E /* Pods_Capstone_GVA_PeerViewTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F3D15F24E29DD5762B39786 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFDAB09A2E8F63DDE3B9356A /* Pods-Capstone_GVA_PeerView.debug.xcconfig */,
+				8CD5262D4E56377FC28F0D8B /* Pods-Capstone_GVA_PeerView.release.xcconfig */,
+				C9B194D38B02193F697AA057 /* Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests.debug.xcconfig */,
+				E77C47E591005D0EFD3E4E4A /* Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests.release.xcconfig */,
+				3C4C820E036238C90B0D6CF1 /* Pods-Capstone_GVA_PeerViewTests.debug.xcconfig */,
+				05C20FD3D48F1F959ECCCB6B /* Pods-Capstone_GVA_PeerViewTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7D1087C124E5D94E005692C9 = {
+			isa = PBXGroup;
+			children = (
+				7D1087CC24E5D94E005692C9 /* Capstone_GVA_PeerView */,
+				7D1087E624E5D950005692C9 /* Capstone_GVA_PeerViewTests */,
+				7D1087F124E5D950005692C9 /* Capstone_GVA_PeerViewUITests */,
+				7D1087CB24E5D94E005692C9 /* Products */,
+				6F3D15F24E29DD5762B39786 /* Pods */,
+				2EDB75A56D303306BBB1C697 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7D1087CB24E5D94E005692C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D1087CA24E5D94E005692C9 /* Capstone_GVA_PeerView.app */,
+				7D1087E324E5D950005692C9 /* Capstone_GVA_PeerViewTests.xctest */,
+				7D1087EE24E5D950005692C9 /* Capstone_GVA_PeerViewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D1087CC24E5D94E005692C9 /* Capstone_GVA_PeerView */ = {
+			isa = PBXGroup;
+			children = (
+				7D1087CD24E5D94E005692C9 /* AppDelegate.swift */,
+				7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */,
+				7D1087D124E5D94E005692C9 /* ViewController.swift */,
+				7D1087D324E5D94E005692C9 /* Main.storyboard */,
+				7D1087D924E5D950005692C9 /* Assets.xcassets */,
+				7D1087DB24E5D950005692C9 /* LaunchScreen.storyboard */,
+				7D1087DE24E5D950005692C9 /* Info.plist */,
+				7D1087D624E5D94E005692C9 /* Capstone_GVA_PeerView.xcdatamodeld */,
+				7D08BCCA24F717DB00B5DD1E /* DashboardViewController.swift */,
+			);
+			path = Capstone_GVA_PeerView;
+			sourceTree = "<group>";
+		};
+		7D1087E624E5D950005692C9 /* Capstone_GVA_PeerViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				7D1087E724E5D950005692C9 /* Capstone_GVA_PeerViewTests.swift */,
+				7D1087E924E5D950005692C9 /* Info.plist */,
+			);
+			path = Capstone_GVA_PeerViewTests;
+			sourceTree = "<group>";
+		};
+		7D1087F124E5D950005692C9 /* Capstone_GVA_PeerViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7D1087F224E5D950005692C9 /* Capstone_GVA_PeerViewUITests.swift */,
+				7D1087F424E5D950005692C9 /* Info.plist */,
+			);
+			path = Capstone_GVA_PeerViewUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7D1087C924E5D94E005692C9 /* Capstone_GVA_PeerView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D1087F724E5D950005692C9 /* Build configuration list for PBXNativeTarget "Capstone_GVA_PeerView" */;
+			buildPhases = (
+				2A66A90D8D26EF4B885AE56E /* [CP] Check Pods Manifest.lock */,
+				7D1087C624E5D94E005692C9 /* Sources */,
+				7D1087C724E5D94E005692C9 /* Frameworks */,
+				7D1087C824E5D94E005692C9 /* Resources */,
+				F80AF46C96624385C7A4F0B0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Capstone_GVA_PeerView;
+			productName = Capstone_GVA_PeerView;
+			productReference = 7D1087CA24E5D94E005692C9 /* Capstone_GVA_PeerView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7D1087E224E5D950005692C9 /* Capstone_GVA_PeerViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D1087FA24E5D950005692C9 /* Build configuration list for PBXNativeTarget "Capstone_GVA_PeerViewTests" */;
+			buildPhases = (
+				C3544C83B42AAF52F3B20F64 /* [CP] Check Pods Manifest.lock */,
+				7D1087DF24E5D950005692C9 /* Sources */,
+				7D1087E024E5D950005692C9 /* Frameworks */,
+				7D1087E124E5D950005692C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D1087E524E5D950005692C9 /* PBXTargetDependency */,
+			);
+			name = Capstone_GVA_PeerViewTests;
+			productName = Capstone_GVA_PeerViewTests;
+			productReference = 7D1087E324E5D950005692C9 /* Capstone_GVA_PeerViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7D1087ED24E5D950005692C9 /* Capstone_GVA_PeerViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D1087FD24E5D950005692C9 /* Build configuration list for PBXNativeTarget "Capstone_GVA_PeerViewUITests" */;
+			buildPhases = (
+				1A01CF5ABD91191F7AAECE63 /* [CP] Check Pods Manifest.lock */,
+				7D1087EA24E5D950005692C9 /* Sources */,
+				7D1087EB24E5D950005692C9 /* Frameworks */,
+				7D1087EC24E5D950005692C9 /* Resources */,
+				1B69D4E4B322ADB06A2581F7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D1087F024E5D950005692C9 /* PBXTargetDependency */,
+			);
+			name = Capstone_GVA_PeerViewUITests;
+			productName = Capstone_GVA_PeerViewUITests;
+			productReference = 7D1087EE24E5D950005692C9 /* Capstone_GVA_PeerViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D1087C224E5D94E005692C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Varinder Chahal";
+				TargetAttributes = {
+					7D1087C924E5D94E005692C9 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					7D1087E224E5D950005692C9 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 7D1087C924E5D94E005692C9;
+					};
+					7D1087ED24E5D950005692C9 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 7D1087C924E5D94E005692C9;
+					};
+				};
+			};
+			buildConfigurationList = 7D1087C524E5D94E005692C9 /* Build configuration list for PBXProject "Capstone_GVA_PeerView" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7D1087C124E5D94E005692C9;
+			productRefGroup = 7D1087CB24E5D94E005692C9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D1087C924E5D94E005692C9 /* Capstone_GVA_PeerView */,
+				7D1087E224E5D950005692C9 /* Capstone_GVA_PeerViewTests */,
+				7D1087ED24E5D950005692C9 /* Capstone_GVA_PeerViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D1087C824E5D94E005692C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D1087DD24E5D950005692C9 /* LaunchScreen.storyboard in Resources */,
+				7D1087DA24E5D950005692C9 /* Assets.xcassets in Resources */,
+				7D1087D524E5D94E005692C9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D1087E124E5D950005692C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D1087EC24E5D950005692C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A01CF5ABD91191F7AAECE63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1B69D4E4B322ADB06A2581F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests/Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests/Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests/Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A66A90D8D26EF4B885AE56E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Capstone_GVA_PeerView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3544C83B42AAF52F3B20F64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Capstone_GVA_PeerViewTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F80AF46C96624385C7A4F0B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Capstone_GVA_PeerView/Pods-Capstone_GVA_PeerView-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Capstone_GVA_PeerView/Pods-Capstone_GVA_PeerView-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Capstone_GVA_PeerView/Pods-Capstone_GVA_PeerView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D1087C624E5D94E005692C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D1087D224E5D94E005692C9 /* ViewController.swift in Sources */,
+				7D1087CE24E5D94E005692C9 /* AppDelegate.swift in Sources */,
+				7D08BCCB24F717DB00B5DD1E /* DashboardViewController.swift in Sources */,
+				7D1087D824E5D94E005692C9 /* Capstone_GVA_PeerView.xcdatamodeld in Sources */,
+				7D1087D024E5D94E005692C9 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D1087DF24E5D950005692C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D1087E824E5D950005692C9 /* Capstone_GVA_PeerViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D1087EA24E5D950005692C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D1087F324E5D950005692C9 /* Capstone_GVA_PeerViewUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D1087E524E5D950005692C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D1087C924E5D94E005692C9 /* Capstone_GVA_PeerView */;
+			targetProxy = 7D1087E424E5D950005692C9 /* PBXContainerItemProxy */;
+		};
+		7D1087F024E5D950005692C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D1087C924E5D94E005692C9 /* Capstone_GVA_PeerView */;
+			targetProxy = 7D1087EF24E5D950005692C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7D1087D324E5D94E005692C9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D1087D424E5D94E005692C9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7D1087DB24E5D950005692C9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D1087DC24E5D950005692C9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7D1087F524E5D950005692C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7D1087F624E5D950005692C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7D1087F824E5D950005692C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFDAB09A2E8F63DDE3B9356A /* Pods-Capstone_GVA_PeerView.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Capstone_GVA_PeerView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "varinder.Capstone-GVA-PeerView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7D1087F924E5D950005692C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CD5262D4E56377FC28F0D8B /* Pods-Capstone_GVA_PeerView.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Capstone_GVA_PeerView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "varinder.Capstone-GVA-PeerView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7D1087FB24E5D950005692C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C4C820E036238C90B0D6CF1 /* Pods-Capstone_GVA_PeerViewTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Capstone_GVA_PeerViewTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "varinder.Capstone-GVA-PeerViewTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Capstone_GVA_PeerView.app/Capstone_GVA_PeerView";
+			};
+			name = Debug;
+		};
+		7D1087FC24E5D950005692C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05C20FD3D48F1F959ECCCB6B /* Pods-Capstone_GVA_PeerViewTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Capstone_GVA_PeerViewTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "varinder.Capstone-GVA-PeerViewTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Capstone_GVA_PeerView.app/Capstone_GVA_PeerView";
+			};
+			name = Release;
+		};
+		7D1087FE24E5D950005692C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9B194D38B02193F697AA057 /* Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Capstone_GVA_PeerViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "varinder.Capstone-GVA-PeerViewUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Capstone_GVA_PeerView;
+			};
+			name = Debug;
+		};
+		7D1087FF24E5D950005692C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E77C47E591005D0EFD3E4E4A /* Pods-Capstone_GVA_PeerView-Capstone_GVA_PeerViewUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Capstone_GVA_PeerViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "varinder.Capstone-GVA-PeerViewUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Capstone_GVA_PeerView;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D1087C524E5D94E005692C9 /* Build configuration list for PBXProject "Capstone_GVA_PeerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D1087F524E5D950005692C9 /* Debug */,
+				7D1087F624E5D950005692C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D1087F724E5D950005692C9 /* Build configuration list for PBXNativeTarget "Capstone_GVA_PeerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D1087F824E5D950005692C9 /* Debug */,
+				7D1087F924E5D950005692C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D1087FA24E5D950005692C9 /* Build configuration list for PBXNativeTarget "Capstone_GVA_PeerViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D1087FB24E5D950005692C9 /* Debug */,
+				7D1087FC24E5D950005692C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D1087FD24E5D950005692C9 /* Build configuration list for PBXNativeTarget "Capstone_GVA_PeerViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D1087FE24E5D950005692C9 /* Debug */,
+				7D1087FF24E5D950005692C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7D1087D624E5D94E005692C9 /* Capstone_GVA_PeerView.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7D1087D724E5D94E005692C9 /* Capstone_GVA_PeerView.xcdatamodel */,
+			);
+			currentVersion = 7D1087D724E5D94E005692C9 /* Capstone_GVA_PeerView.xcdatamodel */;
+			path = Capstone_GVA_PeerView.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7D1087C224E5D94E005692C9 /* Project object */;
+}
