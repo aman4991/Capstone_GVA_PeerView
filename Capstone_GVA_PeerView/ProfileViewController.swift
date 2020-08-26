@@ -13,7 +13,7 @@ class ProfileViewController: ViewController {
 
     @IBOutlet weak var settingsUIImageView: UIImageView!
     @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
 
     var ref: DatabaseReference!
     var currentUser: User!
@@ -86,4 +86,17 @@ class ProfileViewController: ViewController {
         }
     }
 
+}
+
+extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate
+{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = UICollectionViewCell()
+        return cell
+    }
 }
