@@ -15,6 +15,8 @@
 		7D08BCD524F71D8500B5DD1E /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCD424F71D8500B5DD1E /* AddPostViewController.swift */; };
 		7D08BCD724F7224000B5DD1E /* Callbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCD624F7224000B5DD1E /* Callbacks.swift */; };
 		7D08BCD924F722D500B5DD1E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCD824F722D500B5DD1E /* MapViewController.swift */; };
+		7D08BCDD24F7296F00B5DD1E /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCDB24F7296F00B5DD1E /* PostCollectionViewCell.swift */; };
+		7D08BCDE24F7296F00B5DD1E /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D08BCDC24F7296F00B5DD1E /* PostCollectionViewCell.xib */; };
 		7D1087CE24E5D94E005692C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CD24E5D94E005692C9 /* AppDelegate.swift */; };
 		7D1087D024E5D94E005692C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */; };
 		7D1087D224E5D94E005692C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087D124E5D94E005692C9 /* ViewController.swift */; };
@@ -58,6 +60,8 @@
 		7D08BCD424F71D8500B5DD1E /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		7D08BCD624F7224000B5DD1E /* Callbacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Callbacks.swift; sourceTree = "<group>"; };
 		7D08BCD824F722D500B5DD1E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7D08BCDB24F7296F00B5DD1E /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		7D08BCDC24F7296F00B5DD1E /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
 		7D1087CA24E5D94E005692C9 /* Capstone_GVA_PeerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone_GVA_PeerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1087CD24E5D94E005692C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +136,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7D08BCDA24F7291D00B5DD1E /* View_Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7D1087D124E5D94E005692C9 /* ViewController.swift */,
+				7D08BCCA24F717DB00B5DD1E /* DashboardViewController.swift */,
+				7D08BCCC24F7181E00B5DD1E /* ProfileViewController.swift */,
+				7D08BCCE24F7185B00B5DD1E /* SettingsViewController.swift */,
+				7D08BCD024F718CD00B5DD1E /* SignUpViewController.swift */,
+				7D08BCD424F71D8500B5DD1E /* AddPostViewController.swift */,
+				7D08BCD824F722D500B5DD1E /* MapViewController.swift */,
+				7D08BCDB24F7296F00B5DD1E /* PostCollectionViewCell.swift */,
+			);
+			path = View_Controllers;
+			sourceTree = "<group>";
+		};
 		7D1087C124E5D94E005692C9 = {
 			isa = PBXGroup;
 			children = (
@@ -157,22 +176,17 @@
 		7D1087CC24E5D94E005692C9 /* Capstone_GVA_PeerView */ = {
 			isa = PBXGroup;
 			children = (
+				7D08BCDA24F7291D00B5DD1E /* View_Controllers */,
 				7D1087CD24E5D94E005692C9 /* AppDelegate.swift */,
 				7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */,
-				7D1087D124E5D94E005692C9 /* ViewController.swift */,
+				7D08BCDC24F7296F00B5DD1E /* PostCollectionViewCell.xib */,
 				7D1087D324E5D94E005692C9 /* Main.storyboard */,
 				7D1087D924E5D950005692C9 /* Assets.xcassets */,
 				7D1087DB24E5D950005692C9 /* LaunchScreen.storyboard */,
 				7D1087DE24E5D950005692C9 /* Info.plist */,
 				7D1087D624E5D94E005692C9 /* Capstone_GVA_PeerView.xcdatamodeld */,
-				7D08BCCA24F717DB00B5DD1E /* DashboardViewController.swift */,
-				7D08BCCC24F7181E00B5DD1E /* ProfileViewController.swift */,
-				7D08BCCE24F7185B00B5DD1E /* SettingsViewController.swift */,
-				7D08BCD024F718CD00B5DD1E /* SignUpViewController.swift */,
 				7D08BCD224F71AC900B5DD1E /* GoogleService-Info.plist */,
-				7D08BCD424F71D8500B5DD1E /* AddPostViewController.swift */,
 				7D08BCD624F7224000B5DD1E /* Callbacks.swift */,
-				7D08BCD824F722D500B5DD1E /* MapViewController.swift */,
 			);
 			path = Capstone_GVA_PeerView;
 			sourceTree = "<group>";
@@ -308,6 +322,7 @@
 				7D08BCD324F71AC900B5DD1E /* GoogleService-Info.plist in Resources */,
 				7D1087DA24E5D950005692C9 /* Assets.xcassets in Resources */,
 				7D1087D524E5D94E005692C9 /* Main.storyboard in Resources */,
+				7D08BCDE24F7296F00B5DD1E /* PostCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +458,7 @@
 				7D08BCCF24F7185B00B5DD1E /* SettingsViewController.swift in Sources */,
 				7D1087CE24E5D94E005692C9 /* AppDelegate.swift in Sources */,
 				7D08BCD724F7224000B5DD1E /* Callbacks.swift in Sources */,
+				7D08BCDD24F7296F00B5DD1E /* PostCollectionViewCell.swift in Sources */,
 				7D08BCCB24F717DB00B5DD1E /* DashboardViewController.swift in Sources */,
 				7D1087D824E5D94E005692C9 /* Capstone_GVA_PeerView.xcdatamodeld in Sources */,
 				7D1087D024E5D94E005692C9 /* SceneDelegate.swift in Sources */,
