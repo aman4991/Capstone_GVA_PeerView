@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import AVKit
+import Firebase
 
 class AddPostViewController: UIViewController {
 
@@ -18,10 +20,21 @@ class AddPostViewController: UIViewController {
     var locationTitle: String?
     var selectedImageURL: URL?
     var selectedImage: UIImage?
+    
+    let imagePickerController = UIImagePickerController()
+    var videoURL: NSURL?
+
+    var currentUser: User!
+    var ref: DatabaseReference!
+    var storageRef: StorageReference!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setTapGestures()
+        
+        currentUser = Firebase.Auth.auth().currentUser!
+        ref = Database.database().reference()
+        storageRef = Storage.storage().reference()
     }
 
     func setTapGestures()
@@ -53,9 +66,63 @@ class AddPostViewController: UIViewController {
     }
 
     @IBAction func videoTapped(_ sender: Any) {
+        if videoURL == nil
+        {
+            selectVideo()
+        }
+        else
+        {
+            playVideo()
+        }
+    }
+    
+    func selectVideo()
+    {
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        imagePickerController.mediaTypes = ["public.movie"]
+        present(imagePickerController, animated: true, completion: nil)
+    }
+
+    func playVideo()
+    {
+        if let videoURL = videoURL{
+            let player = AVPlayer(url: videoURL as URL)
+
+            let playerViewController = AVPlayerViewController()
+            playerViewController.player = player
+
+            present(playerViewController, animated: true) {
+                playerViewController.player!.play()
+            }
+        }
     }
 
     @IBAction func postTapped(_ sender: Any) {
+        if textView.text != "" || selectedImageURL != nil || coordinates != nil
+                {
+                    var data: [String: String] = [:]
+                    if textView.text != ""
+                    {
+                        data["text"] = textView.text
+                    }
+                    if let c = coordinates
+                    {
+                        data["lat"] = String(c.latitude)
+                        data["lng"] = String(c.longitude)
+                        data["ltitle"] = locationTitle!
+                    }
+
+                    let ref = self.ref.child("Posts").child(currentUser.uid).childByAutoId()
+                    ref.setValue(data){ (error, DatabaseReference) in
+                        guard error == nil else
+                        {
+                            return
+                        }
+        //                self.uploadImageToCloud()
+        //                self.navigationController?.popViewController(animated: true)
+                    }
+                }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -74,11 +141,22 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
-        selectedImageURL = info[UIImagePickerController.InfoKey.imageURL] as? URL
-        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        selectedImage = image
-        imageView.image = image
-        picker.dismiss(animated: true, completion: nil)
+        if let mediaType = info[UIImagePickerController.InfoKey.mediaType] as? String {
+
+            if mediaType  == "public.image" {
+                selectedImageURL = info[UIImagePickerController.InfoKey.imageURL] as? URL
+                let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+                selectedImage = image
+                imageView.image = image
+                picker.dismiss(animated: true, completion: nil)
+            }
+
+            if mediaType == "public.movie" {
+                videoURL = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerReferenceURL")] as? NSURL
+                print("videoURL: \(videoURL)")
+                imagePickerController.dismiss(animated: true, completion: nil)
+            }
+        }
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

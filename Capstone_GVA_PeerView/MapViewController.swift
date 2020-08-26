@@ -87,7 +87,11 @@ class MapViewController: UIViewController {
             }
             title.append(placemark!.thoroughfare!)
         }
-        return (title)
+        if title == ""
+        {
+            title = "Unknown"
+        }
+        return title
     }
 
 
