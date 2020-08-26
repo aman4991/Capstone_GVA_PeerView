@@ -19,6 +19,8 @@ class ProfileViewController: ViewController {
     var currentUser: User!
     var storageRef: StorageReference!
     var userData: [String:String] = [:]
+    var posts: [Post] = []
+    let cellIdentifier = "reusecell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,33 @@ class ProfileViewController: ViewController {
         storageRef = Storage.storage().reference()
         getUserData()
         setImageView()
-        // Do any additional setup after loading the view.
+        registerCollectionViewCells()
+        getUserPosts()
+    }
+    
+    func registerCollectionViewCells()
+    {
+        let custom_collection_view_cell = UINib(nibName: "PostCollectionViewCell", bundle: nil)
+
+        self.collectionView.register(custom_collection_view_cell, forCellWithReuseIdentifier: self.cellIdentifier)
+    }
+
+    func getUserPosts()
+    {
+        let ref1 = Database.database().reference().child("Posts").child(currentUser.uid)
+
+        print(ref1)
+
+        ref1.observe(.childAdded) { (dataSnapshot) in
+            print("dataSnapshot: \(dataSnapshot)")
+            if let map = dataSnapshot.value as? [String:AnyObject]
+            {
+                let post = Post(datasnapshot: map)
+                print("Post: \(post.text)")
+                self.posts.append(post)
+            }
+            self.collectionView.reloadData()
+        }
     }
 
     func setTapGestures()
@@ -91,12 +119,14 @@ class ProfileViewController: ViewController {
 extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return posts.count
     }
 
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier, for: indexPath) as! PostCollectionViewCell
+        cell.post = posts[indexPath.row]
+        print("return cell")
         return cell
     }
 }

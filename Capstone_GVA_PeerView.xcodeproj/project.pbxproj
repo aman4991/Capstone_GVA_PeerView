@@ -17,6 +17,7 @@
 		7D08BCD924F722D500B5DD1E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCD824F722D500B5DD1E /* MapViewController.swift */; };
 		7D08BCDD24F7296F00B5DD1E /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCDB24F7296F00B5DD1E /* PostCollectionViewCell.swift */; };
 		7D08BCDE24F7296F00B5DD1E /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D08BCDC24F7296F00B5DD1E /* PostCollectionViewCell.xib */; };
+		7D08BCE024F72AF900B5DD1E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCDF24F72AF900B5DD1E /* Post.swift */; };
 		7D1087CE24E5D94E005692C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CD24E5D94E005692C9 /* AppDelegate.swift */; };
 		7D1087D024E5D94E005692C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */; };
 		7D1087D224E5D94E005692C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087D124E5D94E005692C9 /* ViewController.swift */; };
@@ -62,6 +63,7 @@
 		7D08BCD824F722D500B5DD1E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7D08BCDB24F7296F00B5DD1E /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		7D08BCDC24F7296F00B5DD1E /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
+		7D08BCDF24F72AF900B5DD1E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		7D1087CA24E5D94E005692C9 /* Capstone_GVA_PeerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone_GVA_PeerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1087CD24E5D94E005692C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				7D1087D624E5D94E005692C9 /* Capstone_GVA_PeerView.xcdatamodeld */,
 				7D08BCD224F71AC900B5DD1E /* GoogleService-Info.plist */,
 				7D08BCD624F7224000B5DD1E /* Callbacks.swift */,
+				7D08BCDF24F72AF900B5DD1E /* Post.swift */,
 			);
 			path = Capstone_GVA_PeerView;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				7D08BCCD24F7181E00B5DD1E /* ProfileViewController.swift in Sources */,
 				7D08BCD524F71D8500B5DD1E /* AddPostViewController.swift in Sources */,
 				7D1087D224E5D94E005692C9 /* ViewController.swift in Sources */,
+				7D08BCE024F72AF900B5DD1E /* Post.swift in Sources */,
 				7D08BCD124F718CD00B5DD1E /* SignUpViewController.swift in Sources */,
 				7D08BCCF24F7185B00B5DD1E /* SettingsViewController.swift in Sources */,
 				7D1087CE24E5D94E005692C9 /* AppDelegate.swift in Sources */,
