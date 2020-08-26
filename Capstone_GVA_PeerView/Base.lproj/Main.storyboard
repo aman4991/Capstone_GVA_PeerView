@@ -15,6 +15,9 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="heM-Va-e2u">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="kAg-9b-oXd" kind="relationship" relationship="rootViewController" id="drQ-ZO-GGd"/>
                     </connections>
@@ -238,7 +241,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SHY-rn-0zy">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="SHY-rn-0zy">
                                 <rect key="frame" x="0.0" y="44" width="414" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="n5T-8a-MRT"/>
@@ -315,6 +318,7 @@
                         <outlet property="imageView" destination="SHY-rn-0zy" id="egB-6O-gMO"/>
                         <outlet property="textView" destination="z8w-0J-n72" id="bZ1-Kf-oec"/>
                         <outlet property="videoButton" destination="eUy-wW-laJ" id="uUb-0Q-G60"/>
+                        <segue destination="b7N-5p-sBS" kind="show" identifier="addToLocation" id="ylK-gf-lQU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qP-qU-QyK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -332,7 +336,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0c-kw-DjF">
                                 <rect key="frame" x="20" y="64" width="374" height="136"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0I1-jA-WNy">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="0I1-jA-WNy">
                                         <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="136" id="6VL-Uo-U5j"/>
@@ -439,7 +443,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eXb-LV-XHW">
+                           <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="eXb-LV-XHW">
                                 <rect key="frame" x="107" y="64" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="FZq-kU-akI"/>
@@ -535,6 +539,41 @@
             </objects>
             <point key="canvasLocation" x="4172" y="1681"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="dh2-aN-6lH">
+            <objects>
+                <viewController id="b7N-5p-sBS" customClass="MapViewController" customModule="Capstone_GVA_PeerView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CgW-fo-nLM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2ge-F5-nnQ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2ge-F5-nnQ" firstAttribute="top" secondItem="CgW-fo-nLM" secondAttribute="topMargin" id="LYa-f8-maL"/>
+                            <constraint firstItem="2ge-F5-nnQ" firstAttribute="leading" secondItem="CgW-fo-nLM" secondAttribute="leadingMargin" constant="-20" id="gYz-FO-vFH"/>
+                            <constraint firstItem="2ge-F5-nnQ" firstAttribute="trailing" secondItem="CgW-fo-nLM" secondAttribute="trailingMargin" constant="20" id="ofP-8b-Vzs"/>
+                            <constraint firstItem="2ge-F5-nnQ" firstAttribute="bottom" secondItem="CgW-fo-nLM" secondAttribute="bottomMargin" id="r0k-k4-qlQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oSo-e4-du9">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="lVj-hN-06Q">
+                            <connections>
+                                <action selector="addTapped:" destination="b7N-5p-sBS" id="9yh-LH-R9y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="map" destination="2ge-F5-nnQ" id="XBw-5Q-roc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lq1-XL-qaq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1766.6666666666667" y="1680.8035714285713"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="gUU-cN-u0N">
             <objects>
@@ -590,7 +629,9 @@
         <image name="location" catalog="system" width="128" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="placeholder" width="900" height="497"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="profile_placeholder" width="385" height="409"/>
         <image name="video" catalog="system" width="128" height="83"/>
     </resources>
 </document>

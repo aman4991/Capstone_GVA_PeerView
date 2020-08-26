@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import MapKit
 
 class AddPostViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var videoButton: UIButton!
+    var coordinates: CLLocationCoordinate2D?
+    var locationTitle: String?
     var selectedImageURL: URL?
     var selectedImage: UIImage?
 
@@ -46,6 +49,7 @@ class AddPostViewController: UIViewController {
     }
 
     @IBAction func locationTapped(_ sender: Any) {
+        performSegue(withIdentifier: "addToLocation", sender: self)
     }
 
     @IBAction func videoTapped(_ sender: Any) {
@@ -53,15 +57,15 @@ class AddPostViewController: UIViewController {
 
     @IBAction func postTapped(_ sender: Any) {
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let mvc = segue.destination as? MapViewController
+        {
+            mvc.delegate = self
+            mvc.coorindates = self.coordinates
+            mvc.locationTitle = self.locationTitle
+        }
+    }
 
 }
 
@@ -79,5 +83,13 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension AddPostViewController: Callbacks
+{
+    func setCoordinates(coordinates: CLLocationCoordinate2D, title: String) {
+        self.coordinates = coordinates
+        self.locationTitle = title
     }
 }

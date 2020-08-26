@@ -13,6 +13,8 @@
 		7D08BCD124F718CD00B5DD1E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCD024F718CD00B5DD1E /* SignUpViewController.swift */; };
 		7D08BCD324F71AC900B5DD1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D08BCD224F71AC900B5DD1E /* GoogleService-Info.plist */; };
 		7D08BCD524F71D8500B5DD1E /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCD424F71D8500B5DD1E /* AddPostViewController.swift */; };
+		7D08BCD724F7224000B5DD1E /* Callbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCD624F7224000B5DD1E /* Callbacks.swift */; };
+		7D08BCD924F722D500B5DD1E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCD824F722D500B5DD1E /* MapViewController.swift */; };
 		7D1087CE24E5D94E005692C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CD24E5D94E005692C9 /* AppDelegate.swift */; };
 		7D1087D024E5D94E005692C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */; };
 		7D1087D224E5D94E005692C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087D124E5D94E005692C9 /* ViewController.swift */; };
@@ -54,6 +56,8 @@
 		7D08BCD024F718CD00B5DD1E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7D08BCD224F71AC900B5DD1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7D08BCD424F71D8500B5DD1E /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		7D08BCD624F7224000B5DD1E /* Callbacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Callbacks.swift; sourceTree = "<group>"; };
+		7D08BCD824F722D500B5DD1E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7D1087CA24E5D94E005692C9 /* Capstone_GVA_PeerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone_GVA_PeerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1087CD24E5D94E005692C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				7D08BCD024F718CD00B5DD1E /* SignUpViewController.swift */,
 				7D08BCD224F71AC900B5DD1E /* GoogleService-Info.plist */,
 				7D08BCD424F71D8500B5DD1E /* AddPostViewController.swift */,
+				7D08BCD624F7224000B5DD1E /* Callbacks.swift */,
+				7D08BCD824F722D500B5DD1E /* MapViewController.swift */,
 			);
 			path = Capstone_GVA_PeerView;
 			sourceTree = "<group>";
@@ -429,12 +435,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D08BCD924F722D500B5DD1E /* MapViewController.swift in Sources */,
 				7D08BCCD24F7181E00B5DD1E /* ProfileViewController.swift in Sources */,
 				7D08BCD524F71D8500B5DD1E /* AddPostViewController.swift in Sources */,
 				7D1087D224E5D94E005692C9 /* ViewController.swift in Sources */,
 				7D08BCD124F718CD00B5DD1E /* SignUpViewController.swift in Sources */,
 				7D08BCCF24F7185B00B5DD1E /* SettingsViewController.swift in Sources */,
 				7D1087CE24E5D94E005692C9 /* AppDelegate.swift in Sources */,
+				7D08BCD724F7224000B5DD1E /* Callbacks.swift in Sources */,
 				7D08BCCB24F717DB00B5DD1E /* DashboardViewController.swift in Sources */,
 				7D1087D824E5D94E005692C9 /* Capstone_GVA_PeerView.xcdatamodeld in Sources */,
 				7D1087D024E5D94E005692C9 /* SceneDelegate.swift in Sources */,
