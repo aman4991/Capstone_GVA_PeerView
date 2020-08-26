@@ -13,11 +13,13 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    static var send = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if Firebase.Auth.auth().currentUser != nil
+        if Firebase.Auth.auth().currentUser != nil, ViewController.send
         {
+            ViewController.send = false
             moveToDashboard()
         }
         // Do any additional setup after loading the view.
