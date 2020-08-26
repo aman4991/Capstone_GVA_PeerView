@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7D08BCCB24F717DB00B5DD1E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCCA24F717DB00B5DD1E /* DashboardViewController.swift */; };
+		7D08BCCD24F7181E00B5DD1E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCCC24F7181E00B5DD1E /* ProfileViewController.swift */; };
+		7D08BCCF24F7185B00B5DD1E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCCE24F7185B00B5DD1E /* SettingsViewController.swift */; };
+		7D08BCD124F718CD00B5DD1E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCD024F718CD00B5DD1E /* SignUpViewController.swift */; };
+		7D08BCD324F71AC900B5DD1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D08BCD224F71AC900B5DD1E /* GoogleService-Info.plist */; };
 		7D1087CE24E5D94E005692C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CD24E5D94E005692C9 /* AppDelegate.swift */; };
 		7D1087D024E5D94E005692C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */; };
 		7D1087D224E5D94E005692C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087D124E5D94E005692C9 /* ViewController.swift */; };
@@ -44,6 +48,10 @@
 		3C4C820E036238C90B0D6CF1 /* Pods-Capstone_GVA_PeerViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Capstone_GVA_PeerViewTests.debug.xcconfig"; path = "Target Support Files/Pods-Capstone_GVA_PeerViewTests/Pods-Capstone_GVA_PeerViewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4BDD8988B8D9AC09EDA10C5E /* Pods_Capstone_GVA_PeerViewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Capstone_GVA_PeerViewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D08BCCA24F717DB00B5DD1E /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		7D08BCCC24F7181E00B5DD1E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7D08BCCE24F7185B00B5DD1E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7D08BCD024F718CD00B5DD1E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7D08BCD224F71AC900B5DD1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7D1087CA24E5D94E005692C9 /* Capstone_GVA_PeerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone_GVA_PeerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1087CD24E5D94E005692C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +160,10 @@
 				7D1087DE24E5D950005692C9 /* Info.plist */,
 				7D1087D624E5D94E005692C9 /* Capstone_GVA_PeerView.xcdatamodeld */,
 				7D08BCCA24F717DB00B5DD1E /* DashboardViewController.swift */,
+				7D08BCCC24F7181E00B5DD1E /* ProfileViewController.swift */,
+				7D08BCCE24F7185B00B5DD1E /* SettingsViewController.swift */,
+				7D08BCD024F718CD00B5DD1E /* SignUpViewController.swift */,
+				7D08BCD224F71AC900B5DD1E /* GoogleService-Info.plist */,
 			);
 			path = Capstone_GVA_PeerView;
 			sourceTree = "<group>";
@@ -284,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D1087DD24E5D950005692C9 /* LaunchScreen.storyboard in Resources */,
+				7D08BCD324F71AC900B5DD1E /* GoogleService-Info.plist in Resources */,
 				7D1087DA24E5D950005692C9 /* Assets.xcassets in Resources */,
 				7D1087D524E5D94E005692C9 /* Main.storyboard in Resources */,
 			);
@@ -413,7 +426,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D08BCCD24F7181E00B5DD1E /* ProfileViewController.swift in Sources */,
 				7D1087D224E5D94E005692C9 /* ViewController.swift in Sources */,
+				7D08BCD124F718CD00B5DD1E /* SignUpViewController.swift in Sources */,
+				7D08BCCF24F7185B00B5DD1E /* SettingsViewController.swift in Sources */,
 				7D1087CE24E5D94E005692C9 /* AppDelegate.swift in Sources */,
 				7D08BCCB24F717DB00B5DD1E /* DashboardViewController.swift in Sources */,
 				7D1087D824E5D94E005692C9 /* Capstone_GVA_PeerView.xcdatamodeld in Sources */,
