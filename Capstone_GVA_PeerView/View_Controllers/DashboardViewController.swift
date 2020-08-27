@@ -17,6 +17,7 @@ class DashboardViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         currentUser = FirebaseAuth.Auth.auth().currentUser
+        Utils.setUser(user: currentUser)
         ref = Database.database().reference()
         ref.child("Users").child(currentUser.uid).observeSingleEvent(of: .value) { (dataSnapshot) in
             Utils.setUserData(userData: UserData(datasnapshot: dataSnapshot.value as! [String:AnyObject], uid: self.currentUser.uid))

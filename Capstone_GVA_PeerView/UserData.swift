@@ -22,4 +22,14 @@ class UserData
         self.uid = uid
         self.status = datasnapshot["status"] as? String
     }
+    
+    func getUserDataMap() -> [String: String]
+    {
+        var map: [String: String] = [:]
+        map["name"] = name
+        map["uid"] = uid
+        map["image"] = image
+        map["status"] = status
+        return map
+    }
 }

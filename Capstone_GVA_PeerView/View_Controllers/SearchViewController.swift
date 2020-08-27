@@ -45,6 +45,13 @@ class SearchViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let upvc = segue.destination as? UserProfileViewController
+        {
+            upvc.userData = selectedUser
+        }
+    }
 }
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate

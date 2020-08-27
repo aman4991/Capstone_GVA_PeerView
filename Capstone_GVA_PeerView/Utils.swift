@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import Firebase
 
 class Utils
 {
     private static var userData: UserData?
+    private static var user: User!
 
     static func setUserData(userData: UserData)
     {
@@ -20,5 +22,20 @@ class Utils
     static func getUserData() -> UserData?
     {
         return self.userData
+    }
+    
+    static func setUser(user: User)
+    {
+        self.user = user
+    }
+
+    static func getUser() -> User
+    {
+        return self.user
+    }
+
+    static func getUserUID() -> String
+    {
+        return self.user.uid
     }
 }
