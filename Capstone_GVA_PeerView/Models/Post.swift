@@ -19,6 +19,7 @@ class Post
     var rating: String?
     var user: String?
     var key: String?
+    var video: String?
 
     init(datasnapshot: [String: AnyObject]) {
         self.text = datasnapshot["text"] as? String
@@ -29,6 +30,7 @@ class Post
         self.rating = datasnapshot["rating"] as? String
         self.user = datasnapshot["user"] as? String
         self.key = datasnapshot["key"] as? String
+        self.video = datasnapshot["video"] as? String
     }
     
     func equals(post: Post) -> Bool

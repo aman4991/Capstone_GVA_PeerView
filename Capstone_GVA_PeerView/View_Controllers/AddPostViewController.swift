@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import AVKit
 import Firebase
+import MobileCoreServices
 
 class AddPostViewController: UIViewController {
     
@@ -22,11 +23,14 @@ class AddPostViewController: UIViewController {
     var selectedImage: UIImage?
     
     let imagePickerController = UIImagePickerController()
-    var videoURL: NSURL?
+    var videoData: Data?
     
     var currentUser: User!
     var ref: DatabaseReference!
     var storageRef: StorageReference!
+    var hasImage = false
+    var hasVideo = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +77,7 @@ class AddPostViewController: UIViewController {
     }
     
     @IBAction func videoTapped(_ sender: Any) {
-        if videoURL == nil
+        if videoData == nil
         {
             selectVideo()
         }
@@ -93,118 +97,167 @@ class AddPostViewController: UIViewController {
     
     func playVideo()
     {
-        if let videoURL = videoURL{
-            let player = AVPlayer(url: videoURL as URL)
-            
-            let playerViewController = AVPlayerViewController()
-            playerViewController.player = player
-            
-            present(playerViewController, animated: true) {
-                playerViewController.player!.play()
-            }
-        }
+        //        if let videoURL = videoURL{
+        //            let player = AVPlayer(url: videoURL as URL)
+        //
+        //            let playerViewController = AVPlayerViewController()
+        //            playerViewController.player = player
+        //
+        //            present(playerViewController, animated: true) {
+        //                playerViewController.player!.play()
+        //            }
+        //        }
     }
     
-    @IBAction func postTapped(_ sender: Any) {
-        if textView.text != "" || selectedImageURL != nil || coordinates != nil
+    func uploadImageToCloud(ref reference: DatabaseReference?)
+    {
+        print("called uploadImageToCloud")
+        if self.hasImage
         {
-            var data: [String: String] = [:]
-            if textView.text != ""
+            if let ref = reference
             {
-                data["text"] = textView.text
-            }
-            if let c = coordinates
-            {
-                data["lat"] = String(c.latitude)
-                data["lng"] = String(c.longitude)
-                data["ltitle"] = locationTitle!
-            }
-            
-            let ref = self.ref.child("Posts").child(currentUser.uid).childByAutoId()
-            if data.isEmpty
-            {
-                if self.selectedImageURL != nil
-                {
-                    self.uploadImageToCloud(ref: nil)
+                let data = self.selectedImage!.jpegData(compressionQuality: 0.5)! as NSData
+                let photoRef = self.storageRef.child("post_images").child("\(ref.key!).png")
+                photoRef.putData(data as Data, metadata: nil){ (metadata, err) in
+                    guard metadata != nil else
+                    {
+                        print("error in image upload: \(err)")
+                        return
+                    }
+                    photoRef.downloadURL(completion: { url, error in
+                        guard let url = url, error == nil else
+                        {
+                            print("error in image upload: \(err)")
+                            return
+                        }
+                        
+                        let urlString = url.absoluteString
+                        var data: [String: String] = [:]
+                        data["image"] = urlString
+                        ref.updateChildValues(data)
+                        self.hasImage = false
+                        self.imageView.image = UIImage(named: "placeholder")
+                        if self.hasVideo
+                        {
+                            print("has video")
+                            self.uploadVideoToCloud(ref: ref)
+                        }
+                        else
+                        {
+                            self.goToDashboard()
+                        }
+                    })
                 }
             }
             else
             {
-                data["key"] = ref.key
-                data["user"] = FirebaseAuth.Auth.auth().currentUser?.uid
-                ref.setValue(data){ (error, DatabaseReference) in
-                    guard error == nil else
+                let data = self.selectedImage!.jpegData(compressionQuality: 0.5)! as NSData
+                let photoRef = self.storageRef.child("post_images").child("\(UUID().uuidString).png")
+                print("photoRef: \(photoRef)")
+                photoRef.putData(data as Data, metadata: nil){ (metadata, err) in
+                    guard metadata != nil else
                     {
-                        print(error!)
+                        print("error in image upload: \(err)")
                         return
                     }
-                    if self.selectedImageURL != nil
-                    {
-                        self.uploadImageToCloud(ref: ref)
-                    }
-                    self.goToDashboard()
-                }
-            }
-            
-        }
-    }
-    
-    
-    func uploadImageToCloud(ref reference: DatabaseReference?)
-    {
-        print(7)
-        if let ref = reference
-        {
-            ref.observeSingleEvent(of: .value, with: { snapshot in
-                for task in snapshot.children {
-                    print(8)
-                    let id = (task as? DataSnapshot)?.key
-                    print(id)
-                    let data = self.selectedImage!.jpegData(compressionQuality: 0.5)! as NSData
-                    let photoRef = self.storageRef.child("post_images").child("\(id).png")
-                    _ = photoRef.putData(data as Data, metadata: nil){ (metadata, err) in
-                        guard metadata != nil else
+                    photoRef.downloadURL(completion: { url, error in
+                        guard let url = url, error == nil else
                         {
+                            print("error in image upload: \(err)")
                             return
                         }
-                        photoRef.downloadURL(completion: { url, error in
-                            guard let url = url, error == nil else
-                            {
-                                return
-                            }
-                            
-                            let urlString = url.absoluteString
-                            var data: [String: String] = [:]
-                            data["image"] = urlString
-                            ref.updateChildValues(data)
-                        })
-                    }
-                    // do other things
+                        
+                        let urlString = url.absoluteString
+                        var data: [String: String] = [:]
+                        data["image"] = urlString
+                        let ref = self.ref.child("Posts").child(self.currentUser.uid).childByAutoId()
+                        data["key"] = ref.key
+                        data["user"] = FirebaseAuth.Auth.auth().currentUser?.uid
+                        ref.setValue(data)
+                        self.hasImage = false
+                        self.imageView.image = UIImage(named: "placeholder")
+                        if self.hasVideo
+                        {
+                            print("has video")
+                            self.uploadVideoToCloud(ref: ref)
+                        }
+                        else
+                        {
+                            self.goToDashboard()
+                        }
+                    })
                 }
-            })
+            }
         }
-        else
+        else if self.hasVideo
         {
-            let data = self.selectedImage!.jpegData(compressionQuality: 0.5)! as NSData
-            let photoRef = self.storageRef.child("post_images").child("\(UUID().uuidString).png")
-            _ = photoRef.putData(data as Data, metadata: nil){ (metadata, err) in
+            print("has video")
+            self.uploadVideoToCloud(ref: reference)
+        }
+        
+    }
+    
+    func uploadVideoToCloud(ref reference: DatabaseReference?)
+    {
+        print("got to uploadVideoToCloud")
+        if let ref = reference
+        {
+            print("reference is not nil: \(ref)")
+            let videoRef = self.storageRef.child("post_videos").child("\(ref.key!).mp4")
+            print("videoRef: \(videoRef)")
+            videoRef.putData(self.videoData!, metadata: nil){ (metadata, err) in
                 guard metadata != nil else
                 {
+                    print("error in video upload: \(err?.localizedDescription)")
                     return
                 }
-                photoRef.downloadURL(completion: { url, error in
+                videoRef.downloadURL(completion: { url, error in
                     guard let url = url, error == nil else
                     {
+                        print("error in video upload: \(err?.localizedDescription)")
                         return
                     }
                     
                     let urlString = url.absoluteString
                     var data: [String: String] = [:]
-                    data["image"] = urlString
+                    data["video"] = urlString
+                    ref.updateChildValues(data)
+                    self.hasVideo = false
+                    self.videoButton.setBackgroundImage(UIImage(systemName: "video"), for: .normal)
+                    self.goToDashboard()
+                })
+            }
+            // do other things
+        }
+        else
+        {
+            print("reference is nil")
+            let file_name = "\(UUID().uuidString.replacingOccurrences(of: "-", with: "_", options: .caseInsensitive, range: nil)).mp4"
+            print("file name: \(file_name)")
+            let videoRef = self.storageRef.child("post_videos").child(file_name)
+            print("videoRef: \(videoRef)")
+            videoRef.putData(self.videoData! , metadata: nil){ (metadata, err) in
+                guard metadata != nil else
+                {
+                    print("error in video upload: \(err?.localizedDescription)")
+                    return
+                }
+                videoRef.downloadURL(completion: { url, error in
+                    guard let url = url, error == nil else
+                    {
+                        print("error in video upload: \(err?.localizedDescription)")
+                        return
+                    }
+                    
+                    let urlString = url.absoluteString
+                    var data: [String: String] = [:]
+                    data["video"] = urlString
                     let ref = self.ref.child("Posts").child(self.currentUser.uid).childByAutoId()
                     data["key"] = ref.key
                     data["user"] = FirebaseAuth.Auth.auth().currentUser?.uid
                     ref.setValue(data)
+                    self.hasVideo = false
+                    self.videoButton.setBackgroundImage(UIImage(systemName: "video"), for: .normal)
                     self.goToDashboard()
                 })
             }
@@ -243,8 +296,9 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
             }
             
             if mediaType == "public.movie" {
-                videoURL = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerReferenceURL")] as? NSURL
-                print("videoURL: \(videoURL)")
+                let videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? NSURL
+                //                print("videoURL: \(videoURL)")
+                self.videoData = NSData(contentsOf: videoURL as! URL) as Data?
                 imagePickerController.dismiss(animated: true, completion: nil)
             }
         }
