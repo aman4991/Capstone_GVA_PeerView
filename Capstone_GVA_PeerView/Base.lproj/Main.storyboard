@@ -1011,7 +1011,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1BC-lo-3SN"/>
                     </view>
-                    <navigationItem key="navigationItem" id="vKn-kB-sUp"/>
+                    <navigationItem key="navigationItem" id="vKn-kB-sUp">
+                        <barButtonItem key="rightBarButtonItem" image="rectangle.and.arrow.up.right.and.arrow.down.left" catalog="system" id="dvO-pt-tHO">
+                            <connections>
+                                <action selector="sorted:" destination="LRW-5q-TBG" id="55L-L4-Cc0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="u21-ja-QSH" id="mg9-yS-Zxu"/>
                         <outlet property="ratingBar" destination="ZIj-q6-OAR" id="Kaa-y5-kqZ"/>
@@ -1036,6 +1042,7 @@
         <image name="placeholder" width="900" height="497"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="profile_placeholder" width="385" height="409"/>
+        <image name="rectangle.and.arrow.up.right.and.arrow.down.left" catalog="system" width="121" height="128"/>
         <image name="video" catalog="system" width="128" height="83"/>
     </resources>
 </document>
