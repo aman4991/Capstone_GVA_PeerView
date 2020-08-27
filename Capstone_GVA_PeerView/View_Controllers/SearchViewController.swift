@@ -55,6 +55,10 @@ class SearchViewController: UIViewController {
             upvc.userData = selectedUser
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
 }
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate
@@ -107,6 +111,10 @@ extension SearchViewController: UISearchBarDelegate
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
 }
