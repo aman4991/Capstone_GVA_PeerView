@@ -298,7 +298,7 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
             if mediaType == "public.movie" {
                 let videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? NSURL
                 //                print("videoURL: \(videoURL)")
-                self.videoData = NSData(contentsOf: videoURL as! URL) as Data?
+                self.videoData = NSData(contentsOf: videoURL! as URL) as Data?
                 imagePickerController.dismiss(animated: true, completion: nil)
             }
         }

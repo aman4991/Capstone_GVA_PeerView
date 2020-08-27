@@ -25,6 +25,10 @@ class PostCollectionViewCell: UICollectionViewCell {
             do
             {
                 try textView.text = post?.text
+                if post?.video != nil
+                {
+                    try textView.text = "(Video) \(textView.text!)"
+                }
                 if post?.image == nil
                 {
                     imageview.image = UIImage(named: "placeholder")

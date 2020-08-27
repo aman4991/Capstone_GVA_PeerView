@@ -28,7 +28,8 @@ class PostViewController: UIViewController {
     var ratings: Int = 0
     @IBOutlet weak var deleteBtn: UIBarButtonItem!
     @IBOutlet weak var locationBtn: UIBarButtonItem!
-
+    @IBOutlet weak var playBtn: UIBarButtonItem!
+    
     var delegate: ProfileViewController?
     
     var post: Post?
@@ -68,17 +69,33 @@ class PostViewController: UIViewController {
             ratingBar.isEnabled = false
             setTapGestures()
         }
-        if post?.lat == nil, post?.user != currentUser.uid
+        if post?.user == currentUser.uid, post?.lat != nil, post?.video == nil
         {
-            self.navigationItem.rightBarButtonItems = nil
+            self.navigationItem.rightBarButtonItems = [deleteBtn,locationBtn]
         }
-        else if post?.lat == nil, post?.user == currentUser.uid
+        else if post?.user == currentUser.uid, post?.lat == nil, post?.video != nil
+        {
+            self.navigationItem.rightBarButtonItems = [deleteBtn,playBtn]
+        }
+        else if post?.user == currentUser.uid, post?.lat == nil, post?.video == nil
         {
             self.navigationItem.rightBarButtonItems = [deleteBtn]
         }
-        else if post?.lat != nil, post?.user != currentUser.uid
+        else if post?.user != currentUser.uid, post?.lat != nil, post?.video != nil
+        {
+            self.navigationItem.rightBarButtonItems = [locationBtn, playBtn]
+        }
+        else if post?.user != currentUser.uid, post?.lat != nil, post?.video == nil
         {
             self.navigationItem.rightBarButtonItems = [locationBtn]
+        }
+        else if post?.user != currentUser.uid, post?.lat == nil, post?.video != nil
+        {
+            self.navigationItem.rightBarButtonItems = [playBtn]
+        }
+        else if post?.lat == nil, post?.user != currentUser.uid, post?.video == nil
+        {
+            self.navigationItem.rightBarButtonItems = nil
         }
         setData()
         ratingBar.ratingDidChange = ratingValue(_:)
