@@ -86,15 +86,72 @@ class RatingViewController: UIViewController {
     @IBAction func sorted(_ sender: Any) {
         if sorting == 0
         {
-
+            var newMap: [String:[Rating]] = [:]
+            for key in ratingMap.keys
+            {
+                for r in ratingMap[key]!
+                {
+                    if var ar = newMap[r.userData!.gender!]
+                    {
+                        ar.append(r)
+                        newMap[r.userData!.gender!] = ar
+                    }
+                    else
+                    {
+                        newMap[r.userData!.gender!] = [r]
+                    }
+                }
+            }
+            ratingMap = newMap
+            dump(newMap)
+            sorting = 1
+            tableView.reloadData()
         }
         else if sorting == 1
         {
-
+            var newMap: [String:[Rating]] = [:]
+            for key in ratingMap.keys
+            {
+                for r in ratingMap[key]!
+                {
+                    if var ar = newMap[r.userData!.age!]
+                    {
+                        ar.append(r)
+                        newMap[r.userData!.age!] = ar
+                    }
+                    else
+                    {
+                        newMap[r.userData!.age!] = [r]
+                    }
+                }
+            }
+            ratingMap = newMap
+            dump(newMap)
+            sorting = 2
+            tableView.reloadData()
         }
         else
         {
-
+            var newMap: [String:[Rating]] = [:]
+            for key in ratingMap.keys
+            {
+                for r in ratingMap[key]!
+                {
+                    if var ar = newMap["No Order"]
+                    {
+                        ar.append(r)
+                        newMap["No Order"] = ar
+                    }
+                    else
+                    {
+                        newMap["No Order"] = [r]
+                    }
+                }
+            }
+            ratingMap = newMap
+            dump(newMap)
+            sorting = 0
+            tableView.reloadData()
         }
     }
 
