@@ -41,6 +41,7 @@ class RequestTableViewCell: UITableViewCell {
 
     @IBAction func acceptButton(_ sender: Any) {
         ref.child("Followers").child(Utils.getUserUID()).child(userData!.uid).setValue(userData?.getUserDataMap())
+        ref.child("Followers").child(userData!.uid).child(Utils.getUserUID()).setValue(Utils.getUserData()!.getUserDataMap())
         ref.child("Follow Requests").child(Utils.getUserUID()).child(userData!.uid).removeValue()
         delegate?.removeRequest(at: index)
     }
