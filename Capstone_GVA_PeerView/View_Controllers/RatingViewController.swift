@@ -22,7 +22,8 @@ class RatingViewController: UIViewController {
     var total: CGFloat = 0
     var rating: CGFloat = 0
     var reusableCell = "reusableCell"
-    var ratingList: [Rating] = []
+    var ratingMap: [String:[Rating]] = [:]
+    var sorting = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,17 @@ class RatingViewController: UIViewController {
                 downloadImage(from: URL(string: image)!, imageView: self.imageView)
             }
             ref.child("Posts").child(post!.user!).child(post!.key!).child("Ratings").observe(.childAdded) { (dataSnapshot) in
-                self.ratingList.append(Rating(datasnapshot: dataSnapshot.value as! [String: AnyObject], uid: dataSnapshot.key))
+//                self.ratingList.append(Rating(datasnapshot: dataSnapshot.value as! [String: AnyObject], uid: dataSnapshot.key))
+                let newRating = Rating(datasnapshot: dataSnapshot.value as! [String: AnyObject], uid: dataSnapshot.key)
+                if var ar = self.ratingMap["No Order"]
+                {
+                    ar.append(newRating)
+                    self.ratingMap["No Order"] = ar
+                }
+                else
+                {
+                    self.ratingMap["No Order"] = [newRating]
+                }
                 self.ratings += 1
                 self.total += ((dataSnapshot.value as! [String:AnyObject])["rating"] as! String).CGFloatValue()!
                 self.rating = self.total / CGFloat(self.ratings)
@@ -71,13 +82,37 @@ class RatingViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
+    
+    @IBAction func sorted(_ sender: Any) {
+        if sorting == 0
+        {
+
+        }
+        else if sorting == 1
+        {
+
+        }
+        else
+        {
+
+        }
+    }
 
 }
 
 extension RatingViewController: UITableViewDelegate, UITableViewDataSource
 {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return ratingMap.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ratingList.count
+        return ratingMap.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return Array(ratingMap.keys)[section]
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,8 +123,8 @@ extension RatingViewController: UITableViewDelegate, UITableViewDataSource
                     cell = UITableViewCell(style: .subtitle, reuseIdentifier: self.reusableCell)
                 }
 
-                cell?.textLabel?.text = ratingList[indexPath.row].rating
-                cell?.detailTextLabel?.text = ratingList[indexPath.row].userData?.name
+                cell?.textLabel?.text = ratingMap[Array(ratingMap.keys)[indexPath.section]]![indexPath.row].rating
+                cell?.detailTextLabel?.text = ratingMap[Array(ratingMap.keys)[indexPath.section]]![indexPath.row].userData?.name
         //        cell?.imageView?.image = UIImage(named: "profile_placeholder")
         //        if let imageview = cell?.imageView, let image = comments[indexPath.row].image
         //        {
