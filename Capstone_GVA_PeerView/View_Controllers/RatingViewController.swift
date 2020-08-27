@@ -11,11 +11,11 @@ import AARatingBar
 import Firebase
 
 class RatingViewController: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var ratingBar: AARatingBar!
     @IBOutlet weak var tableView: UITableView!
-
+    
     var post: Post?
     var ref: DatabaseReference!
     var ratings = 0
@@ -28,7 +28,7 @@ class RatingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-
+        
         if post != nil
         {
             if let image = post?.image
@@ -36,7 +36,7 @@ class RatingViewController: UIViewController {
                 downloadImage(from: URL(string: image)!, imageView: self.imageView)
             }
             ref.child("Posts").child(post!.user!).child(post!.key!).child("Ratings").observe(.childAdded) { (dataSnapshot) in
-//                self.ratingList.append(Rating(datasnapshot: dataSnapshot.value as! [String: AnyObject], uid: dataSnapshot.key))
+                //                self.ratingList.append(Rating(datasnapshot: dataSnapshot.value as! [String: AnyObject], uid: dataSnapshot.key))
                 let newRating = Rating(datasnapshot: dataSnapshot.value as! [String: AnyObject], uid: dataSnapshot.key)
                 if var ar = self.ratingMap["No Order"]
                 {
@@ -60,8 +60,8 @@ class RatingViewController: UIViewController {
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
-
-
+    
+    
     func downloadImage(from url: URL?, imageView: UIImageView) {
         if url != nil
         {
@@ -78,7 +78,7 @@ class RatingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
@@ -154,7 +154,7 @@ class RatingViewController: UIViewController {
             tableView.reloadData()
         }
     }
-
+    
 }
 
 extension RatingViewController: UITableViewDelegate, UITableViewDataSource
@@ -165,28 +165,28 @@ extension RatingViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ratingMap.count
+        return ratingMap[Array(ratingMap.keys)[section]]!.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return Array(ratingMap.keys)[section]
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: self.reusableCell)
-
-                if cell == nil
-                {
-                    cell = UITableViewCell(style: .subtitle, reuseIdentifier: self.reusableCell)
-                }
-
-                cell?.textLabel?.text = ratingMap[Array(ratingMap.keys)[indexPath.section]]![indexPath.row].rating
-                cell?.detailTextLabel?.text = ratingMap[Array(ratingMap.keys)[indexPath.section]]![indexPath.row].userData?.name
-        //        cell?.imageView?.image = UIImage(named: "profile_placeholder")
-        //        if let imageview = cell?.imageView, let image = comments[indexPath.row].image
-        //        {
-        //            downloadImage(from: URL(string: image), imageView: imageview)
-        //        }
-                return cell!
+        
+        if cell == nil
+        {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: self.reusableCell)
+        }
+        
+        cell?.textLabel?.text = ratingMap[Array(ratingMap.keys)[indexPath.section]]![indexPath.row].rating
+        cell?.detailTextLabel?.text = ratingMap[Array(ratingMap.keys)[indexPath.section]]![indexPath.row].userData?.name
+        cell?.imageView?.image = UIImage(named: "profile_placeholder")
+        if let imageview = cell?.imageView, let image = ratingMap[Array(ratingMap.keys)[indexPath.section]]![indexPath.row].userData!.image
+        {
+            downloadImage(from: URL(string: image), imageView: imageview)
+        }
+        return cell!
     }
 }
