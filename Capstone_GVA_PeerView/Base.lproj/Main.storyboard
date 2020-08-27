@@ -574,15 +574,25 @@
                         <viewLayoutGuide key="safeArea" id="YdQ-Ie-WY6"/>
                     </view>
                     <navigationItem key="navigationItem" id="pcK-dh-Xqr">
-                        <barButtonItem key="rightBarButtonItem" image="location" catalog="system" id="ifl-Kk-xsB">
-                            <connections>
-                                <action selector="locationClicked:" destination="O4g-h0-qee" id="Dxm-sV-UHZ"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="location" catalog="system" id="ifl-Kk-xsB">
+                                <connections>
+                                    <action selector="locationClicked:" destination="O4g-h0-qee" id="Dxm-sV-UHZ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="ukZ-Xj-ReN">
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="O4g-h0-qee" id="n7x-Rc-8d6"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="commentsTextField" destination="XCD-1Q-Qv4" id="j5E-Th-PWo"/>
+                        <outlet property="deleteBtn" destination="ukZ-Xj-ReN" id="o8m-om-Wwe"/>
                         <outlet property="imageView" destination="G3F-JK-1H9" id="9eb-mh-ufG"/>
+                        <outlet property="locationBtn" destination="ifl-Kk-xsB" id="zIe-ig-5bh"/>
                         <outlet property="locationButton" destination="G3F-JK-1H9" id="FwX-Zp-Zoj"/>
                         <outlet property="ratingBar" destination="kYE-7t-X1w" id="Rz9-Rx-2JQ"/>
                         <outlet property="tableview" destination="ERL-eC-VPR" id="jgu-D5-Bsz"/>
@@ -1064,7 +1074,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="W4k-cl-bOE"/>
+        <segue reference="wpz-DM-dDi"/>
         <segue reference="fnv-LQ-5oJ"/>
     </inferredMetricsTieBreakers>
     <resources>

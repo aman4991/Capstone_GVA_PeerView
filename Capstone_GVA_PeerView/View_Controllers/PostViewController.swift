@@ -26,6 +26,10 @@ class PostViewController: UIViewController {
     var rating: CGFloat = 0
     var total: CGFloat = 0
     var ratings: Int = 0
+    @IBOutlet weak var deleteBtn: UIBarButtonItem!
+    @IBOutlet weak var locationBtn: UIBarButtonItem!
+
+    var delegate: ProfileViewController?
     
     var post: Post?
     
@@ -64,9 +68,17 @@ class PostViewController: UIViewController {
             ratingBar.isEnabled = false
             setTapGestures()
         }
-        if post?.lat == nil
+        if post?.lat == nil, post?.user != currentUser.uid
         {
             self.navigationItem.rightBarButtonItems = nil
+        }
+        else if post?.lat == nil, post?.user == currentUser.uid
+        {
+            self.navigationItem.rightBarButtonItems = [deleteBtn]
+        }
+        else if post?.lat != nil, post?.user != currentUser.uid
+        {
+            self.navigationItem.rightBarButtonItems = [locationBtn]
         }
         setData()
         ratingBar.ratingDidChange = ratingValue(_:)
@@ -76,6 +88,12 @@ class PostViewController: UIViewController {
     
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
         commentsTextField.resignFirstResponder()
+    }
+    
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        ref.child("Posts").child(currentUser.uid).child(post!.key!).removeValue()
+        delegate?.removePost(post: post!)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func setData()

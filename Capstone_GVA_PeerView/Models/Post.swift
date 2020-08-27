@@ -30,4 +30,9 @@ class Post
         self.user = datasnapshot["user"] as? String
         self.key = datasnapshot["key"] as? String
     }
+    
+    func equals(post: Post) -> Bool
+    {
+        return self.key == post.key
+    }
 }

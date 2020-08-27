@@ -125,9 +125,17 @@ class ProfileViewController: ViewController {
         else if let pvc = segue.destination as? PostViewController
         {
             pvc.post = selectedPost
+            pvc.delegate = self
         }
     }
     
+    func removePost(post: Post)
+    {
+        posts.removeAll { (post1) -> Bool in
+            return post.equals(post: post1)
+        }
+        self.collectionView.reloadData()
+    }
 }
 
 extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate
