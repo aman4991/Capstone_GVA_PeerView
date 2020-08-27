@@ -13,6 +13,8 @@ class PostCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageview: UIImageView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var showLocationButton: UIButton!
     
     var delegate: ToMove!
     
@@ -34,6 +36,15 @@ class PostCollectionViewCell: UICollectionViewCell {
                 else
                 {
                     downloadImage(from: URL(string: post!.image!)!)
+                }
+                if let lat = post?.lat, let lng = post?.lng
+                {
+                    locationLabel.text = post?.ltitle
+                }
+                else
+                {
+                    locationLabel.isHidden = true
+                    showLocationButton.isHidden = true
                 }
             }
             catch

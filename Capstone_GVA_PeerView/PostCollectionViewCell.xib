@@ -39,13 +39,25 @@
                             <action selector="showLocationTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="pKt-Ud-kde"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFR-x7-kEk">
+                        <rect key="frame" x="10" y="286" width="171" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="171" id="RhC-Uw-IIZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="CLM-yY-UoM" firstAttribute="leading" secondItem="bFR-x7-kEk" secondAttribute="trailing" constant="8" symbolic="YES" id="AA8-wD-2h5"/>
                 <constraint firstItem="vN3-AR-7uC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="G9R-v8-7aS"/>
                 <constraint firstItem="pL4-2p-aBl" firstAttribute="leading" secondItem="vN3-AR-7uC" secondAttribute="leading" id="H1x-74-Jm7"/>
+                <constraint firstItem="bFR-x7-kEk" firstAttribute="top" secondItem="vN3-AR-7uC" secondAttribute="bottom" constant="8" symbolic="YES" id="PYJ-o3-XIv"/>
                 <constraint firstItem="vN3-AR-7uC" firstAttribute="top" secondItem="pL4-2p-aBl" secondAttribute="bottom" id="Pj6-nQ-Mhs"/>
+                <constraint firstItem="bFR-x7-kEk" firstAttribute="bottom" secondItem="CLM-yY-UoM" secondAttribute="bottom" id="RD8-dY-zMF"/>
                 <constraint firstAttribute="trailing" secondItem="vN3-AR-7uC" secondAttribute="trailing" id="WC1-g0-GcU"/>
                 <constraint firstItem="CLM-yY-UoM" firstAttribute="top" secondItem="vN3-AR-7uC" secondAttribute="bottom" id="j2b-vb-R3X"/>
                 <constraint firstItem="pL4-2p-aBl" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="lme-48-6cI"/>
@@ -56,9 +68,11 @@
             <size key="customSize" width="299" height="308"/>
             <connections>
                 <outlet property="imageview" destination="pL4-2p-aBl" id="RSC-mv-kH4"/>
+                <outlet property="locationLabel" destination="bFR-x7-kEk" id="BB6-7A-krt"/>
+                <outlet property="showLocationButton" destination="CLM-yY-UoM" id="LmI-dU-TQu"/>
                 <outlet property="textView" destination="vN3-AR-7uC" id="hU9-lk-rdS"/>
             </connections>
-            <point key="canvasLocation" x="309.4202898550725" y="202.90178571428569"/>
+            <point key="canvasLocation" x="308.69565217391306" y="202.90178571428569"/>
         </collectionViewCell>
     </objects>
     <resources>
