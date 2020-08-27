@@ -44,6 +44,7 @@ class PostViewController: UIViewController {
             self.navigationItem.rightBarButtonItems = nil
         }
         setData()
+        ratingBar.ratingDidChange = ratingValue(_:)
     }
     
     func setData()
@@ -126,6 +127,13 @@ class PostViewController: UIViewController {
         {
             mvc.coorindates = CLLocationCoordinate2D(latitude: post!.lat!.toDouble()!, longitude: post!.lng!.toDouble()!)
         }
+    }
+    
+    func ratingValue(_ rating: CGFloat) -> Void
+    {
+        var map = Utils.getUserData()?.getUserDataMap()
+        map!["rating"] = "\(rating)"
+        ref.child("Posts").child(post!.user!).child(post!.key!).child(Utils.getUserUID()).setValue(map)
     }
 }
 
