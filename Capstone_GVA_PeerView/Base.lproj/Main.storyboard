@@ -903,6 +903,7 @@
                     <connections>
                         <outlet property="collectionView" destination="GJo-S3-b0I" id="6j6-ek-afz"/>
                         <segue destination="O4g-h0-qee" kind="show" identifier="dashToPost" id="Inx-MO-fih"/>
+                        <segue destination="b7N-5p-sBS" kind="show" identifier="dashToMap" id="bwQ-Nf-4be"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aIm-Bv-pA3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1008,7 +1009,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="F2T-jE-9IA"/>
+        <segue reference="bwQ-Nf-4be"/>
         <segue reference="Inx-MO-fih"/>
     </inferredMetricsTieBreakers>
     <resources>

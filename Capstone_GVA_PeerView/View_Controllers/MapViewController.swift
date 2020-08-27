@@ -34,7 +34,6 @@ class MapViewController: UIViewController {
         {
             self.navigationItem.rightBarButtonItems = nil
         }
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func addTapped(_ sender: Any) {
@@ -74,6 +73,7 @@ class MapViewController: UIViewController {
         annotation.title = title
         print("title: \(title)")
         self.map.addAnnotation(annotation)
+        self.map.setRegion(MKCoordinateRegion(center: coorindates!, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)), animated: true)
     }
 
 
