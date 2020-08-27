@@ -59,7 +59,7 @@ class PostCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func showLocationTapped(_ sender: Any) {
-        delegate.moveToMap(coordinates: CLLocationCoordinate2D(latitude: ((post?.lat ?? "0") as NSString).doubleValue, longitude: ((post?.lng ?? "0") as NSString).doubleValue))
+        delegate.moveToMap(coordinates: CLLocationCoordinate2D(latitude: ((post?.lat ?? "0") as NSString).doubleValue, longitude: ((post?.lng ?? "0") as NSString).doubleValue), title: post?.ltitle ?? "Unknown")
     }
     
     override func layoutSubviews() {

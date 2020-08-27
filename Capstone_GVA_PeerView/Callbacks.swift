@@ -14,7 +14,7 @@ protocol Callbacks {
 }
 
 protocol ToMove {
-    func moveToMap(coordinates: CLLocationCoordinate2D)
+    func moveToMap(coordinates: CLLocationCoordinate2D, title: String)
 }
 
 protocol FollowRequestOperations {

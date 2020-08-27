@@ -195,6 +195,7 @@ class PostViewController: UIViewController {
         if let mvc = segue.destination as? MapViewController
         {
             mvc.coorindates = CLLocationCoordinate2D(latitude: post!.lat!.toDouble()!, longitude: post!.lng!.toDouble()!)
+            mvc.locationTitle = post?.ltitle
         }
         else if let rvc = segue.destination as? RatingViewController
         {

@@ -24,6 +24,7 @@ class ProfileViewController: ViewController {
     var userData: [String:String] = [:]
     var posts: [Post] = []
     let cellIdentifier = "reusecell"
+    var ltitle: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,6 +122,7 @@ class ProfileViewController: ViewController {
         if let mvc = segue.destination as? MapViewController
         {
             mvc.coorindates = coordinates
+            mvc.locationTitle = ltitle
         }
         else if let pvc = segue.destination as? PostViewController
         {
@@ -160,8 +162,9 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
 
 extension ProfileViewController: ToMove
 {
-    func moveToMap(coordinates: CLLocationCoordinate2D) {
+    func moveToMap(coordinates: CLLocationCoordinate2D, title: String) {
         self.coordinates = coordinates
+        self.ltitle = title
         performSegue(withIdentifier: "profileToMap", sender: self)
     }
 }

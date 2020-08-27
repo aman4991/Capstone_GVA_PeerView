@@ -19,6 +19,7 @@ class DashboardViewController: ViewController {
     let cellIdentifier = "cellIdentifier"
     var selectedPost: Post?
     var coordinates: CLLocationCoordinate2D?
+    var ltitle: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,7 @@ class DashboardViewController: ViewController {
         else if let mvc = segue.destination as? MapViewController
         {
             mvc.coorindates = self.coordinates
+            mvc.locationTitle = ltitle
         }
     }
 }
@@ -78,9 +80,9 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
 
 extension DashboardViewController: ToMove
 {
-    func moveToMap(coordinates: CLLocationCoordinate2D) {
+    func moveToMap(coordinates: CLLocationCoordinate2D, title: String) {
         self.coordinates = coordinates
+        self.ltitle = title
         performSegue(withIdentifier: "dashToMap", sender: self)
     }
-
 }

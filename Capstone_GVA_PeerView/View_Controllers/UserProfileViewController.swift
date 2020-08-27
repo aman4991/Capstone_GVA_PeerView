@@ -11,7 +11,7 @@ import Firebase
 import MapKit
 
 class UserProfileViewController: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
@@ -21,7 +21,8 @@ class UserProfileViewController: UIViewController {
     var ref: DatabaseReference!
     var cellIdentifier = "cellIdentifier"
     var coordinates: CLLocationCoordinate2D?
-
+    var ltitle: String?
+    
     var posts: [Post] = []
     var selectedPost: Post?
     var alreadyFollowed = false
@@ -75,15 +76,15 @@ class UserProfileViewController: UIViewController {
     func registerCollectionViewCells()
     {
         let custom_collection_view_cell = UINib(nibName: "PostCollectionViewCell", bundle: nil)
-
+        
         self.collectionView.register(custom_collection_view_cell, forCellWithReuseIdentifier: self.cellIdentifier)
     }
-
+    
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
-
-
+    
+    
     func downloadImage(from url: URL?, imageView: UIImageView) {
         if url != nil
         {
@@ -96,7 +97,7 @@ class UserProfileViewController: UIViewController {
             }
         }
     }
-
+    
     func getPosts()
     {
         ref.child("Posts").child(userData!.uid).observe(.childAdded) { (datasnapshot) in
@@ -111,9 +112,14 @@ class UserProfileViewController: UIViewController {
         if let mvc = segue.destination as? MapViewController
         {
             mvc.coorindates = self.coordinates
+            mvc.locationTitle = self.ltitle
+        }
+        if let pvc = segue.destination as? PostViewController
+        {
+            pvc.post = selectedPost
         }
     }
-
+    
     func setImageView()
     {
         imageView.layer.borderWidth = 1.0
@@ -134,11 +140,11 @@ class UserProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
-
+    
 }
 
 extension UserProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate
@@ -146,25 +152,26 @@ extension UserProfileViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return posts.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier, for: indexPath) as! PostCollectionViewCell
         cell.post = posts[indexPath.row]
         cell.delegate = self
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedPost = posts[indexPath.row]
-        performSegue(withIdentifier: "ownToPost", sender: self)
+        performSegue(withIdentifier: "profileToPost", sender: self)
     }
-
+    
 }
 
 extension UserProfileViewController: ToMove
 {
-    func moveToMap(coordinates: CLLocationCoordinate2D) {
+    func moveToMap(coordinates: CLLocationCoordinate2D, title: String) {
         self.coordinates = coordinates
+        self.ltitle = title
         performSegue(withIdentifier: "userProfileToMap", sender: self)
     }
 }
