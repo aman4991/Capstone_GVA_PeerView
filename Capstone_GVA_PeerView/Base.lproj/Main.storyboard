@@ -562,11 +562,12 @@
                         <outlet property="tableview" destination="ERL-eC-VPR" id="jgu-D5-Bsz"/>
                         <outlet property="textview" destination="oKG-el-mXX" id="bEh-It-j4w"/>
                         <segue destination="b7N-5p-sBS" kind="show" identifier="postToMap" id="F2T-jE-9IA"/>
+                        <segue destination="LRW-5q-TBG" kind="show" identifier="postToPostRating" id="fil-tm-Mdw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tG6-N0-vis" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3963.7681159420295" y="911.38392857142856"/>
+            <point key="canvasLocation" x="4054" y="901"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OB6-a0-ClI">
@@ -950,6 +951,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUP-kk-lsi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="963.76811594202911" y="1680.8035714285713"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QaT-sP-drO">
+            <objects>
+                <viewController id="LRW-5q-TBG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="obq-8I-1Pk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="u21-ja-QSH">
+                                <rect key="frame" x="0.0" y="88" width="414" height="275"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="113-E5-Gdu">
+                                <rect key="frame" x="0.0" y="388" width="414" height="474"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZIj-q6-OAR" customClass="AARatingBar" customModule="AARatingBar">
+                                <rect key="frame" x="0.0" y="323" width="414" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="113-E5-Gdu" firstAttribute="trailing" secondItem="1BC-lo-3SN" secondAttribute="trailing" id="CgO-18-79J"/>
+                            <constraint firstItem="113-E5-Gdu" firstAttribute="top" secondItem="ZIj-q6-OAR" secondAttribute="bottom" id="Fte-Vt-VOu"/>
+                            <constraint firstItem="1BC-lo-3SN" firstAttribute="trailing" secondItem="u21-ja-QSH" secondAttribute="trailing" id="Kdt-YU-oAb"/>
+                            <constraint firstItem="u21-ja-QSH" firstAttribute="top" secondItem="1BC-lo-3SN" secondAttribute="top" id="Og8-lo-Di2"/>
+                            <constraint firstItem="u21-ja-QSH" firstAttribute="bottom" secondItem="ZIj-q6-OAR" secondAttribute="top" constant="40" id="QIb-XL-W75"/>
+                            <constraint firstItem="1BC-lo-3SN" firstAttribute="bottom" secondItem="113-E5-Gdu" secondAttribute="bottom" id="RtP-XX-HFx"/>
+                            <constraint firstItem="u21-ja-QSH" firstAttribute="leading" secondItem="1BC-lo-3SN" secondAttribute="leading" id="U8l-Kc-7eE"/>
+                            <constraint firstItem="113-E5-Gdu" firstAttribute="leading" secondItem="1BC-lo-3SN" secondAttribute="leading" id="boz-PU-fR7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1BC-lo-3SN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vKn-kB-sUp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tor-Oe-p79" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4993" y="911"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
