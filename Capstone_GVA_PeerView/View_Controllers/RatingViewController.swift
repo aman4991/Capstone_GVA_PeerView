@@ -21,6 +21,7 @@ class RatingViewController: UIViewController {
     var ratings = 0
     var total: CGFloat = 0
     var rating: CGFloat = 0
+    var reusableCell = "reusableCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,5 +60,24 @@ class RatingViewController: UIViewController {
             }
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+    }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
+
+}
+
+extension RatingViewController: UITableViewDelegate, UITableViewDataSource
+{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell(style: .subtitle, reuseIdentifier: self.reusableCell)
+    }
 }

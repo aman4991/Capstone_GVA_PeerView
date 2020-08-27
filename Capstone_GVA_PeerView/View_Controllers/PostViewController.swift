@@ -100,7 +100,7 @@ class PostViewController: UIViewController {
 
     @objc func ratingBarTapped()
     {
-
+        performSegue(withIdentifier: "postToPostRating", sender: self)
     }
     
     
@@ -155,6 +155,10 @@ class PostViewController: UIViewController {
         if let mvc = segue.destination as? MapViewController
         {
             mvc.coorindates = CLLocationCoordinate2D(latitude: post!.lat!.toDouble()!, longitude: post!.lng!.toDouble()!)
+        }
+        else if let rvc = segue.destination as? RatingViewController
+        {
+            rvc.post = self.post
         }
     }
     
