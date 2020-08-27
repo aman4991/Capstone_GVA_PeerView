@@ -27,6 +27,7 @@
 		7D08BCF124F73C5500B5DD1E /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCEF24F73C5500B5DD1E /* RequestTableViewCell.swift */; };
 		7D08BCF224F73C5500B5DD1E /* RequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D08BCF024F73C5500B5DD1E /* RequestTableViewCell.xib */; };
 		7D08BCF424F73D1800B5DD1E /* FollowRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCF324F73D1800B5DD1E /* FollowRequestsViewController.swift */; };
+		7D08BCF724F73EFE00B5DD1E /* ProfileVisited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCF624F73EFE00B5DD1E /* ProfileVisited.swift */; };
 		7D1087CE24E5D94E005692C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CD24E5D94E005692C9 /* AppDelegate.swift */; };
 		7D1087D024E5D94E005692C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */; };
 		7D1087D224E5D94E005692C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087D124E5D94E005692C9 /* ViewController.swift */; };
@@ -82,6 +83,7 @@
 		7D08BCEF24F73C5500B5DD1E /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
 		7D08BCF024F73C5500B5DD1E /* RequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestTableViewCell.xib; sourceTree = "<group>"; };
 		7D08BCF324F73D1800B5DD1E /* FollowRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowRequestsViewController.swift; sourceTree = "<group>"; };
+		7D08BCF624F73EFE00B5DD1E /* ProfileVisited.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVisited.swift; sourceTree = "<group>"; };
 		7D1087CA24E5D94E005692C9 /* Capstone_GVA_PeerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone_GVA_PeerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1087CD24E5D94E005692C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,17 @@
 			path = View_Controllers;
 			sourceTree = "<group>";
 		};
+		7D08BCF524F73EE200B5DD1E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7D08BCDF24F72AF900B5DD1E /* Post.swift */,
+				7D08BCE524F7325B00B5DD1E /* UserData.swift */,
+				7D08BCE724F7363700B5DD1E /* Comment.swift */,
+				7D08BCF624F73EFE00B5DD1E /* ProfileVisited.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		7D1087C124E5D94E005692C9 = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +214,7 @@
 		7D1087CC24E5D94E005692C9 /* Capstone_GVA_PeerView */ = {
 			isa = PBXGroup;
 			children = (
+				7D08BCF524F73EE200B5DD1E /* Models */,
 				7D08BCDA24F7291D00B5DD1E /* View_Controllers */,
 				7D1087CD24E5D94E005692C9 /* AppDelegate.swift */,
 				7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */,
@@ -213,10 +227,7 @@
 				7D1087D624E5D94E005692C9 /* Capstone_GVA_PeerView.xcdatamodeld */,
 				7D08BCD224F71AC900B5DD1E /* GoogleService-Info.plist */,
 				7D08BCD624F7224000B5DD1E /* Callbacks.swift */,
-				7D08BCDF24F72AF900B5DD1E /* Post.swift */,
 				7D08BCE324F7314700B5DD1E /* Utils.swift */,
-				7D08BCE524F7325B00B5DD1E /* UserData.swift */,
-				7D08BCE724F7363700B5DD1E /* Comment.swift */,
 			);
 			path = Capstone_GVA_PeerView;
 			sourceTree = "<group>";
@@ -489,6 +500,7 @@
 				7D08BCF424F73D1800B5DD1E /* FollowRequestsViewController.swift in Sources */,
 				7D08BCE224F7304700B5DD1E /* PostViewController.swift in Sources */,
 				7D08BCD524F71D8500B5DD1E /* AddPostViewController.swift in Sources */,
+				7D08BCF724F73EFE00B5DD1E /* ProfileVisited.swift in Sources */,
 				7D08BCE824F7363700B5DD1E /* Comment.swift in Sources */,
 				7D1087D224E5D94E005692C9 /* ViewController.swift in Sources */,
 				7D08BCE424F7314700B5DD1E /* Utils.swift in Sources */,

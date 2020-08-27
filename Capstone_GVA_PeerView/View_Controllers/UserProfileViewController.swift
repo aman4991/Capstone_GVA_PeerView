@@ -29,6 +29,7 @@ class UserProfileViewController: UIViewController {
         super.viewDidLoad()
         ref = Database.database().reference()
         setImageView()
+        registerCollectionViewCells()
         if userData != nil
         {
             var map = Utils.getUserData()?.getUserDataMap()
@@ -40,8 +41,8 @@ class UserProfileViewController: UIViewController {
             {
                 downloadImage(from: URL(string: image), imageView: self.imageView)
             }
-            ref.child("Followers").child("Users").observeSingleEvent(of: .value, with: { (dataSnapshot) in
-                if dataSnapshot.hasChild(self.userData!.uid)
+            ref.child("Followers").child(userData!.uid).observeSingleEvent(of: .value, with: { (dataSnapshot) in
+                if dataSnapshot.hasChild(Utils.getUserUID())
                 {
                     self.sendRequestButton.isHidden = true
                     self.getPosts()
@@ -57,6 +58,13 @@ class UserProfileViewController: UIViewController {
     @IBAction func sendRequestTapped(_ sender: Any) {
         ref.child("Follow Requests").child(userData!.uid).child(Utils.getUserUID()).setValue(Utils.getUserData()!.getUserDataMap())
         sendRequestButton.setTitle("Request Sent", for: .normal)
+    }
+    
+    func registerCollectionViewCells()
+    {
+        let custom_collection_view_cell = UINib(nibName: "PostCollectionViewCell", bundle: nil)
+
+        self.collectionView.register(custom_collection_view_cell, forCellWithReuseIdentifier: self.cellIdentifier)
     }
 
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
@@ -79,7 +87,8 @@ class UserProfileViewController: UIViewController {
 
     func getPosts()
     {
-        ref.child("Posts").child(userData!.uid).observeSingleEvent(of: .childAdded) { (datasnapshot) in
+        ref.child("Posts").child(userData!.uid).observe(.childAdded) { (datasnapshot) in
+            dump(datasnapshot)
             self.posts.append(Post(datasnapshot: datasnapshot.value as! [String: AnyObject]))
             self.collectionView.reloadData()
         }
