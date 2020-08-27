@@ -30,6 +30,7 @@
 		7D08BCF724F73EFE00B5DD1E /* ProfileVisited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCF624F73EFE00B5DD1E /* ProfileVisited.swift */; };
 		7D08BCF924F73FFF00B5DD1E /* ProfileVisitedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCF824F73FFF00B5DD1E /* ProfileVisitedViewController.swift */; };
 		7D08BCFB24F74C7A00B5DD1E /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCFA24F74C7A00B5DD1E /* RatingViewController.swift */; };
+		7D08BCFD24F74E3A00B5DD1E /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCFC24F74E3A00B5DD1E /* Rating.swift */; };
 		7D1087CE24E5D94E005692C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CD24E5D94E005692C9 /* AppDelegate.swift */; };
 		7D1087D024E5D94E005692C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */; };
 		7D1087D224E5D94E005692C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087D124E5D94E005692C9 /* ViewController.swift */; };
@@ -88,6 +89,7 @@
 		7D08BCF624F73EFE00B5DD1E /* ProfileVisited.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVisited.swift; sourceTree = "<group>"; };
 		7D08BCF824F73FFF00B5DD1E /* ProfileVisitedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVisitedViewController.swift; sourceTree = "<group>"; };
 		7D08BCFA24F74C7A00B5DD1E /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		7D08BCFC24F74E3A00B5DD1E /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		7D1087CA24E5D94E005692C9 /* Capstone_GVA_PeerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone_GVA_PeerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1087CD24E5D94E005692C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				7D08BCE524F7325B00B5DD1E /* UserData.swift */,
 				7D08BCE724F7363700B5DD1E /* Comment.swift */,
 				7D08BCF624F73EFE00B5DD1E /* ProfileVisited.swift */,
+				7D08BCFC24F74E3A00B5DD1E /* Rating.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				7D08BCFB24F74C7A00B5DD1E /* RatingViewController.swift in Sources */,
 				7D08BCE824F7363700B5DD1E /* Comment.swift in Sources */,
 				7D1087D224E5D94E005692C9 /* ViewController.swift in Sources */,
+				7D08BCFD24F74E3A00B5DD1E /* Rating.swift in Sources */,
 				7D08BCE424F7314700B5DD1E /* Utils.swift in Sources */,
 				7D08BCE024F72AF900B5DD1E /* Post.swift in Sources */,
 				7D08BCD124F718CD00B5DD1E /* SignUpViewController.swift in Sources */,

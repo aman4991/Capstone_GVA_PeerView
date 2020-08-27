@@ -15,12 +15,16 @@ class UserData
     var uid: String!
     var image: String!
     var status: String?
+    var gender: String?
+    var age: String?
 
     init(datasnapshot: [String: AnyObject], uid: String) {
         self.name = datasnapshot["name"] as? String
         self.image = datasnapshot["image"] as? String
         self.uid = uid
         self.status = datasnapshot["status"] as? String
+        self.gender = datasnapshot["gender"] as? String
+        self.age = datasnapshot["age"] as? String
     }
     
     func getUserDataMap() -> [String: String]
@@ -30,6 +34,8 @@ class UserData
         map["uid"] = uid
         map["image"] = image
         map["status"] = status
+        map["gender"] = gender
+        map["age"] = age
         return map
     }
 }
