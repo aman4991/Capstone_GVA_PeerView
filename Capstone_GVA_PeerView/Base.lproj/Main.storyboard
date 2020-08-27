@@ -849,52 +849,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLA-Wg-flp">
-                                <rect key="frame" x="20" y="64" width="374" height="136"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="8FB-KJ-miE">
-                                        <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="136" id="5Zv-6T-yhV"/>
-                                            <constraint firstAttribute="width" constant="136" id="AS3-Dl-Ia4"/>
-                                        </constraints>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="unG-aX-YfE">
-                                        <rect key="frame" x="136" y="0.0" width="238" height="136"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gear" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="17D-Hf-MbF">
-                                                <rect key="frame" x="198" y="0.0" width="40" height="40.5"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
-                                                </accessibility>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="1LZ-5j-VaY"/>
-                                                    <constraint firstAttribute="height" constant="40" id="jCI-Gw-YUF"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3E-6I-d6V">
-                                                <rect key="frame" x="122" y="54" width="116" height="36"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
-                                                <state key="normal" title="Profile Viewers">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inV-Ia-pAM">
-                                                <rect key="frame" x="112" y="104" width="126" height="32"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
-                                                <state key="normal" title="Follow Requests">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="8FB-KJ-miE">
+                            <rect key="frame" x="20" y="64" width="136" height="136"/>
                                 <constraints>
-                                    <constraint firstItem="8FB-KJ-miE" firstAttribute="centerY" secondItem="mLA-Wg-flp" secondAttribute="centerY" id="rGf-8b-mnU"/>
+                                    <constraint firstAttribute="height" constant="136" id="5Zv-6T-yhV"/>
+                                    <constraint firstAttribute="width" constant="136" id="AS3-Dl-Ia4"/>
                                 </constraints>
-                            </stackView>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="44H-5H-pGH">
                                 <rect key="frame" x="20" y="220" width="374" height="642"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -920,16 +881,37 @@
                                     <outlet property="delegate" destination="yn8-BH-bAs" id="oqX-Hz-hrS"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAr-Je-7Kg">
+                                <rect key="frame" x="176" y="170" width="218" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JJ0-gZ-Ys9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Send Request"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nVn-Cu-Nb5">
+                                <rect key="frame" x="176" y="84" width="218" height="66"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="mLA-Wg-flp" firstAttribute="leading" secondItem="eLr-DL-ffo" secondAttribute="leading" constant="20" id="ED4-yi-aFU"/>
+                            <constraint firstItem="nVn-Cu-Nb5" firstAttribute="leading" secondItem="8FB-KJ-miE" secondAttribute="trailing" constant="20" id="DZM-HL-SuN"/>
+                            <constraint firstItem="eLr-DL-ffo" firstAttribute="trailing" secondItem="nVn-Cu-Nb5" secondAttribute="trailing" constant="20" id="Dey-q0-huc"/>
                             <constraint firstItem="44H-5H-pGH" firstAttribute="leading" secondItem="eLr-DL-ffo" secondAttribute="leading" constant="20" id="EGW-JY-3x2"/>
+                            <constraint firstItem="8FB-KJ-miE" firstAttribute="leading" secondItem="eLr-DL-ffo" secondAttribute="leading" constant="20" id="HsD-4N-H8G"/>
+                            <constraint firstItem="nVn-Cu-Nb5" firstAttribute="top" secondItem="eLr-DL-ffo" secondAttribute="top" constant="40" id="QSf-RE-Iyj"/>
+                            <constraint firstItem="EAr-Je-7Kg" firstAttribute="leading" secondItem="8FB-KJ-miE" secondAttribute="trailing" constant="20" id="SIw-wF-oJG"/>
+                            <constraint firstItem="44H-5H-pGH" firstAttribute="top" secondItem="EAr-Je-7Kg" secondAttribute="bottom" constant="20" id="UkM-NR-VfI"/>
+                            <constraint firstItem="8FB-KJ-miE" firstAttribute="top" secondItem="eLr-DL-ffo" secondAttribute="top" constant="20" id="bZY-Nm-HU5"/>
+                            <constraint firstItem="EAr-Je-7Kg" firstAttribute="top" secondItem="nVn-Cu-Nb5" secondAttribute="bottom" constant="20" id="cOA-Zy-2B2"/>
                             <constraint firstItem="eLr-DL-ffo" firstAttribute="trailing" secondItem="44H-5H-pGH" secondAttribute="trailing" constant="20" id="duU-kF-e8X"/>
-                            <constraint firstItem="mLA-Wg-flp" firstAttribute="top" secondItem="eLr-DL-ffo" secondAttribute="top" constant="20" id="efB-xb-4Mz"/>
-                            <constraint firstItem="44H-5H-pGH" firstAttribute="top" secondItem="mLA-Wg-flp" secondAttribute="bottom" constant="20" id="jzr-fG-jHe"/>
+                            <constraint firstItem="eLr-DL-ffo" firstAttribute="trailing" secondItem="EAr-Je-7Kg" secondAttribute="trailing" constant="20" id="toK-FG-NP0"/>
                             <constraint firstItem="eLr-DL-ffo" firstAttribute="bottom" secondItem="44H-5H-pGH" secondAttribute="bottom" id="tp6-rE-3aI"/>
-                            <constraint firstItem="eLr-DL-ffo" firstAttribute="trailing" secondItem="mLA-Wg-flp" secondAttribute="trailing" constant="20" id="wgx-RA-zP9"/>
+                            <constraint firstItem="EAr-Je-7Kg" firstAttribute="bottom" secondItem="8FB-KJ-miE" secondAttribute="bottom" id="xVc-pC-7qT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eLr-DL-ffo"/>
                     </view>
@@ -938,12 +920,11 @@
                     <connections>
                         <outlet property="collectionView" destination="44H-5H-pGH" id="SvP-wH-uYS"/>
                         <outlet property="profileImageView" destination="8FB-KJ-miE" id="ZuI-wE-ysr"/>
-                        <outlet property="settingsUIImageView" destination="17D-Hf-MbF" id="BNM-Fq-ORo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUP-kk-lsi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="1681"/>
+            <point key="canvasLocation" x="963.76811594202911" y="1680.8035714285713"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

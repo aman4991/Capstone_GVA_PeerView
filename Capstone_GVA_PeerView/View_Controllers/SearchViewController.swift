@@ -17,6 +17,7 @@ class SearchViewController: UIViewController {
     var users: [UserData] = []
     let reusableCell = "reusableCell"
     @IBOutlet weak var tableview: UITableView!
+    var selectedUser: UserData?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +68,11 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate
             downloadImage(from: URL(string: image), imageView: imageview)
         }
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedUser = users[indexPath.row]
+        performSegue(withIdentifier: "userClick", sender: self)
     }
 
 }
