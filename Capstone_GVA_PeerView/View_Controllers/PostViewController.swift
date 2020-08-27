@@ -50,8 +50,13 @@ class PostViewController: UIViewController {
         else
         {
             ref.child("Posts").child(post!.user!).child(post!.key!).child("Ratings").child(Utils.getUserUID()).observeSingleEvent(of: .value) { (dataSnapshot) in
-                let val = ((dataSnapshot.value as! [String:AnyObject])["rating"] as! String).CGFloatValue()!
-                self.ratingBar.value = val
+                if let map = dataSnapshot.value as? [String:AnyObject]
+                {
+                    if let r = map["rating"] as? String
+                    {
+                        self.ratingBar.value = r.CGFloatValue() ?? 0
+                    }
+                }
             }
         }
         if post?.user == currentUser.uid
@@ -83,7 +88,8 @@ class PostViewController: UIViewController {
             }
             if let image = p.image
             {
-                downloadImage(from: URL(string: image)!, imageView: self.imageView)
+                let url = URL(string: image)!
+                downloadImage(from: url)
             }
             if let _ = p.lat, let _ = p.lng
             {
@@ -102,8 +108,8 @@ class PostViewController: UIViewController {
         ratingBar.isUserInteractionEnabled = true
         ratingBar.addGestureRecognizer(ratingBarTap)
     }
-
-
+    
+    
     @objc func ratingBarTapped()
     {
         performSegue(withIdentifier: "postToPostRating", sender: self)
@@ -136,15 +142,25 @@ class PostViewController: UIViewController {
     }
     
     
-    func downloadImage(from url: URL?, imageView: UIImageView) {
-        if url != nil
-        {
-            getData(from: url!) { data, response, error in
-                guard let data = data, error == nil else { return }
-                print(response?.suggestedFilename ?? url!.lastPathComponent)
-                DispatchQueue.main.async() { [weak self] in
-                    imageView.image = UIImage(data: data)
-                }
+    func downloadImage(from url: URL) {
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            DispatchQueue.main.async() { [weak self] in
+                let image = UIImage(data: data)!
+                self?.imageView.isHidden = false
+                self?.imageView.image = image
+                //                dump(self?.imageView)
+            }
+        }
+    }
+    
+    func downloadImage(from url: URL, imageview: UIImageView) {
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            DispatchQueue.main.async() { [weak self] in
+                imageview.image = UIImage(data: data)
             }
         }
     }
@@ -170,9 +186,13 @@ class PostViewController: UIViewController {
     
     func ratingValue(_ rating: CGFloat) -> Void
     {
-        var map = Utils.getUserData()?.getUserDataMap()
-        map!["rating"] = "\(rating)"
-        ref.child("Posts").child(post!.user!).child(post!.key!).child("Ratings").child(Utils.getUserUID()).setValue(map)
+        print("rating: \(rating)")
+        if rating != CGFloat(0)
+        {
+            var map = Utils.getUserData()?.getUserDataMap()
+            map!["rating"] = "\(rating)"
+            ref.child("Posts").child(post!.user!).child(post!.key!).child("Ratings").child(Utils.getUserUID()).setValue(map)
+        }
     }
 }
 
@@ -195,7 +215,7 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource
         cell?.imageView?.image = UIImage(named: "profile_placeholder")
         if let imageview = cell?.imageView, let image = comments[indexPath.row].image
         {
-            downloadImage(from: URL(string: image), imageView: imageview)
+            downloadImage(from: URL(string: image)!, imageview: imageview)
         }
         return cell!
     }

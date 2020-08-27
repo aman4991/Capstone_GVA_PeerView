@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class SettingsViewController: ViewController {
+class SettingsViewController: UIViewController {
     
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -30,7 +30,6 @@ class SettingsViewController: ViewController {
         ref = Database.database().reference().child("Users").child(currentUser.uid)
         storageRef = Storage.storage().reference()
         getUserData()
-        //        setUserData()
         setImageView()
         setTapGestures()
         ageTextField.delegate = self
