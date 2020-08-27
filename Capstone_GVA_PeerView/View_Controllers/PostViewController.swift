@@ -63,10 +63,17 @@ class PostViewController: UIViewController {
     }
 
     @IBAction func commentClicked(_ sender: Any) {
-        if let comment = textview.text
+        if let comment = commentsTextField.text
         {
-            let ref = self.ref.child("Posts").child(currentUser.uid).child((self.post?.key)!).child("Comments").childByAutoId()
+            dump(post)
+            let ref = self.ref.child("Posts").child(currentUser.uid).child(post!.key!).child("Comments").childByAutoId()
+            let key = ref.key
             var data: [String: String] = [:]
+            data["uid"] = Utils.getUserData()?.uid
+            data["name"] = Utils.getUserData()?.name
+            data["image"] = Utils.getUserData()?.image
+            data["key"] = key
+            ref.updateChildValues(data)
             data["comment"] = comment
 
         }

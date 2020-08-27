@@ -122,6 +122,10 @@ class ProfileViewController: ViewController {
         {
             mvc.coorindates = coordinates
         }
+        else if let pvc = segue.destination as? PostViewController
+        {
+            pvc.post = selectedPost
+        }
     }
     
 }

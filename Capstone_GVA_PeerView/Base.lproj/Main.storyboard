@@ -465,6 +465,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ERL-eC-VPR">
                                 <rect key="frame" x="0.0" y="400" width="414" height="418"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                        <outlet property="dataSource" destination="O4g-h0-qee" id="L3e-yA-bMz"/>
+                                        <outlet property="delegate" destination="O4g-h0-qee" id="Mvj-dC-lyY"/>
+                                    </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKJ-Y4-otc">
                                 <rect key="frame" x="329" y="832" width="65" height="30"/>
@@ -473,8 +477,8 @@
                                     <action selector="commentClicked:" destination="O4g-h0-qee" eventType="touchUpInside" id="EHG-Ca-0tZ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCD-1Q-Qv4" userLabel="I">
-                                <rect key="frame" x="10" y="828" width="311" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCD-1Q-Qv4" userLabel="commentTextField">
+                                <rect key="frame" x="20" y="828" width="299" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -567,22 +571,22 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="XCD-1Q-Qv4" firstAttribute="top" secondItem="ERL-eC-VPR" secondAttribute="bottom" constant="10" id="0b9-VM-ZBa"/>
+                            <constraint firstItem="kKJ-Y4-otc" firstAttribute="bottom" secondItem="XCD-1Q-Qv4" secondAttribute="bottom" id="1mE-IL-Dga"/>
                             <constraint firstItem="h4x-FX-UvJ" firstAttribute="leading" secondItem="YdQ-Ie-WY6" secondAttribute="leading" id="1mW-ea-gIS"/>
+                            <constraint firstItem="kKJ-Y4-otc" firstAttribute="leading" secondItem="XCD-1Q-Qv4" secondAttribute="trailing" constant="10" id="2BJ-ar-cak"/>
                             <constraint firstItem="YdQ-Ie-WY6" firstAttribute="trailing" secondItem="h4x-FX-UvJ" secondAttribute="trailing" id="6Ig-pl-MQg"/>
                             <constraint firstItem="ERL-eC-VPR" firstAttribute="trailing" secondItem="YdQ-Ie-WY6" secondAttribute="trailing" id="7uG-Ou-ULW"/>
                             <constraint firstItem="oKG-el-mXX" firstAttribute="leading" secondItem="YdQ-Ie-WY6" secondAttribute="leading" id="8VK-oE-b9c"/>
                             <constraint firstItem="ERL-eC-VPR" firstAttribute="top" secondItem="oKG-el-mXX" secondAttribute="bottom" id="NGW-Zj-P24"/>
-                            <constraint firstItem="XCD-1Q-Qv4" firstAttribute="leading" secondItem="QXE-zO-taQ" secondAttribute="leadingMargin" constant="-10" id="Ugj-Kc-W7l"/>
-                            <constraint firstItem="XCD-1Q-Qv4" firstAttribute="bottom" secondItem="kKJ-Y4-otc" secondAttribute="bottom" id="VP4-sa-Ir0"/>
+                            <constraint firstItem="kKJ-Y4-otc" firstAttribute="trailing" secondItem="auO-ee-QvB" secondAttribute="trailing" id="VZw-9Y-3dG"/>
                             <constraint firstItem="oKG-el-mXX" firstAttribute="trailing" secondItem="YdQ-Ie-WY6" secondAttribute="trailing" id="amI-rN-NYN"/>
+                            <constraint firstItem="XCD-1Q-Qv4" firstAttribute="leading" secondItem="YdQ-Ie-WY6" secondAttribute="leading" constant="20" id="bem-rL-8Ko"/>
                             <constraint firstItem="YdQ-Ie-WY6" firstAttribute="trailing" secondItem="auO-ee-QvB" secondAttribute="trailing" constant="20" id="cgU-gf-5bc"/>
                             <constraint firstItem="G3F-JK-1H9" firstAttribute="top" secondItem="QXE-zO-taQ" secondAttribute="top" id="dGQ-1f-LNk"/>
                             <constraint firstItem="oKG-el-mXX" firstAttribute="top" secondItem="G3F-JK-1H9" secondAttribute="bottom" id="ddm-CK-wpH"/>
+                            <constraint firstItem="kKJ-Y4-otc" firstAttribute="top" secondItem="ERL-eC-VPR" secondAttribute="bottom" constant="14" id="egD-NP-im6"/>
                             <constraint firstItem="G3F-JK-1H9" firstAttribute="leading" secondItem="YdQ-Ie-WY6" secondAttribute="leading" id="jgQ-6o-kDs"/>
-                            <constraint firstItem="kKJ-Y4-otc" firstAttribute="trailing" secondItem="YdQ-Ie-WY6" secondAttribute="trailing" constant="-20" id="mqp-IO-hwJ"/>
-                            <constraint firstItem="kKJ-Y4-otc" firstAttribute="bottom" secondItem="YdQ-Ie-WY6" secondAttribute="bottom" id="obv-j0-dn2"/>
-                            <constraint firstItem="kKJ-Y4-otc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XCD-1Q-Qv4" secondAttribute="trailing" constant="8" symbolic="YES" id="p5P-i1-dlV"/>
+                            <constraint firstItem="kKJ-Y4-otc" firstAttribute="bottom" secondItem="YdQ-Ie-WY6" secondAttribute="bottom" id="oNj-0i-10A"/>
                             <constraint firstItem="ERL-eC-VPR" firstAttribute="leading" secondItem="YdQ-Ie-WY6" secondAttribute="leading" id="tDK-YC-aJa"/>
                             <constraint firstItem="oKG-el-mXX" firstAttribute="top" secondItem="h4x-FX-UvJ" secondAttribute="bottom" id="tJL-wn-5GG"/>
                             <constraint firstItem="auO-ee-QvB" firstAttribute="top" secondItem="YdQ-Ie-WY6" secondAttribute="top" id="yWB-7A-Zao"/>
