@@ -793,17 +793,36 @@
             </objects>
             <point key="canvasLocation" x="1766.6666666666667" y="1680.8035714285713"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile Visited View Controller-->
         <scene sceneID="gUU-cN-u0N">
             <objects>
-                <viewController id="XDP-HY-Gvd" sceneMemberID="viewController">
+                <viewController id="XDP-HY-Gvd" customClass="ProfileVisitedViewController" customModule="Capstone_GVA_PeerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rS6-4I-p7N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ecm-9b-LdN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="XDP-HY-Gvd" id="Z3e-T1-F3d"/>
+                                    <outlet property="delegate" destination="XDP-HY-Gvd" id="GKp-fz-HSF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ecm-9b-LdN" firstAttribute="top" secondItem="nBT-OM-Tcd" secondAttribute="top" id="Ex3-U5-OO8"/>
+                            <constraint firstItem="ecm-9b-LdN" firstAttribute="leading" secondItem="nBT-OM-Tcd" secondAttribute="leading" id="NFs-WW-1eC"/>
+                            <constraint firstItem="nBT-OM-Tcd" firstAttribute="bottom" secondItem="ecm-9b-LdN" secondAttribute="bottom" id="NX9-nd-YTm"/>
+                            <constraint firstItem="nBT-OM-Tcd" firstAttribute="trailing" secondItem="ecm-9b-LdN" secondAttribute="trailing" id="gAQ-oP-eH0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nBT-OM-Tcd"/>
                     </view>
                     <navigationItem key="navigationItem" id="wBP-aL-Ldm"/>
+                    <connections>
+                        <outlet property="tableview" destination="ecm-9b-LdN" id="Xus-IC-VyS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqd-o6-owG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

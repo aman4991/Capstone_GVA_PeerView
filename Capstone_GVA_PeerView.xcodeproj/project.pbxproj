@@ -28,6 +28,7 @@
 		7D08BCF224F73C5500B5DD1E /* RequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D08BCF024F73C5500B5DD1E /* RequestTableViewCell.xib */; };
 		7D08BCF424F73D1800B5DD1E /* FollowRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCF324F73D1800B5DD1E /* FollowRequestsViewController.swift */; };
 		7D08BCF724F73EFE00B5DD1E /* ProfileVisited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCF624F73EFE00B5DD1E /* ProfileVisited.swift */; };
+		7D08BCF924F73FFF00B5DD1E /* ProfileVisitedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCF824F73FFF00B5DD1E /* ProfileVisitedViewController.swift */; };
 		7D1087CE24E5D94E005692C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CD24E5D94E005692C9 /* AppDelegate.swift */; };
 		7D1087D024E5D94E005692C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */; };
 		7D1087D224E5D94E005692C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087D124E5D94E005692C9 /* ViewController.swift */; };
@@ -84,6 +85,7 @@
 		7D08BCF024F73C5500B5DD1E /* RequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestTableViewCell.xib; sourceTree = "<group>"; };
 		7D08BCF324F73D1800B5DD1E /* FollowRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowRequestsViewController.swift; sourceTree = "<group>"; };
 		7D08BCF624F73EFE00B5DD1E /* ProfileVisited.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVisited.swift; sourceTree = "<group>"; };
+		7D08BCF824F73FFF00B5DD1E /* ProfileVisitedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVisitedViewController.swift; sourceTree = "<group>"; };
 		7D1087CA24E5D94E005692C9 /* Capstone_GVA_PeerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone_GVA_PeerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1087CD24E5D94E005692C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				7D08BCEB24F7387400B5DD1E /* UserProfileViewController.swift */,
 				7D08BCEF24F73C5500B5DD1E /* RequestTableViewCell.swift */,
 				7D08BCF324F73D1800B5DD1E /* FollowRequestsViewController.swift */,
+				7D08BCF824F73FFF00B5DD1E /* ProfileVisitedViewController.swift */,
 			);
 			path = View_Controllers;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				7D08BCD724F7224000B5DD1E /* Callbacks.swift in Sources */,
 				7D08BCDD24F7296F00B5DD1E /* PostCollectionViewCell.swift in Sources */,
 				7D08BCCB24F717DB00B5DD1E /* DashboardViewController.swift in Sources */,
+				7D08BCF924F73FFF00B5DD1E /* ProfileVisitedViewController.swift in Sources */,
 				7D1087D824E5D94E005692C9 /* Capstone_GVA_PeerView.xcdatamodeld in Sources */,
 				7D1087D024E5D94E005692C9 /* SceneDelegate.swift in Sources */,
 			);
