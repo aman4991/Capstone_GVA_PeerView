@@ -32,6 +32,7 @@ class RequestTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         ref = Database.database().reference()
+        setImageView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -66,5 +67,14 @@ class RequestTableViewCell: UITableViewCell {
                 }
             }
         }
+    }
+    
+    func setImageView()
+    {
+        profileImageView.layer.borderWidth = 1.0
+        profileImageView.layer.masksToBounds = false
+        profileImageView.layer.borderColor = UIColor.white.cgColor
+        profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
+        profileImageView.clipsToBounds = true
     }
 }

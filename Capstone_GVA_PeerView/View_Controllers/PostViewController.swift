@@ -138,6 +138,10 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource
         {
             downloadImage(from: URL(string: image), imageView: imageview)
         }
+        else
+        {
+            cell?.imageView?.image = UIImage(named: "profile_placeholder")
+        }
         return cell!
     }
 
