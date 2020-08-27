@@ -9,6 +9,7 @@
 import UIKit
 import AARatingBar
 import Firebase
+import MapKit
 
 class PostViewController: UIViewController {
 
@@ -37,6 +38,10 @@ class PostViewController: UIViewController {
         {
             ratingBar.isEnabled = false
             print("rating disabled")
+        }
+        if post?.lat == nil
+        {
+            self.navigationItem.rightBarButtonItems = nil
         }
         setData()
     }
@@ -70,7 +75,7 @@ class PostViewController: UIViewController {
 
 
     @IBAction func locationClicked(_ sender: Any) {
-        
+        performSegue(withIdentifier: "postToMap", sender: self)
     }
 
     @IBAction func commentClicked(_ sender: Any) {
@@ -115,7 +120,13 @@ class PostViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let mvc = segue.destination as? MapViewController
+        {
+            mvc.coorindates = CLLocationCoordinate2D(latitude: post!.lat!.toDouble()!, longitude: post!.lng!.toDouble()!)
+        }
+    }
 }
 
 extension PostViewController: UITableViewDelegate, UITableViewDataSource
@@ -147,5 +158,11 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return false
+    }
+}
+
+extension String {
+    func toDouble() -> Double? {
+        return NumberFormatter().number(from: self)?.doubleValue
     }
 }
