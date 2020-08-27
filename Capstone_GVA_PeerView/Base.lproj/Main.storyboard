@@ -909,6 +909,7 @@
                     <tabBarItem key="tabBarItem" title="Dashboard" image="doc.append" catalog="system" id="iaH-kS-sRO"/>
                     <connections>
                         <outlet property="collectionView" destination="GJo-S3-b0I" id="6j6-ek-afz"/>
+                        <segue destination="O4g-h0-qee" kind="show" identifier="dashToPost" id="Inx-MO-fih"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aIm-Bv-pA3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1015,6 +1016,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="wpz-DM-dDi"/>
+        <segue reference="Inx-MO-fih"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="doc.append" catalog="system" width="115" height="128"/>

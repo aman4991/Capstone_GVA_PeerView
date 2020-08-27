@@ -29,7 +29,7 @@ class PostViewController: UIViewController {
         super.viewDidLoad()
         currentUser = FirebaseAuth.Auth.auth().currentUser
         ref = Database.database().reference()
-        ref.child("Posts").child(currentUser.uid).child(post!.key!).child("Comments").observe(.childAdded) { (dataSnapshot) in
+        ref.child("Posts").child(post!.user!).child(post!.key!).child("Comments").observe(.childAdded) { (dataSnapshot) in
             self.comments.append(Comment(datasnapshot: dataSnapshot.value as! [String: AnyObject]))
             self.tableview.reloadData()
         }
@@ -77,7 +77,7 @@ class PostViewController: UIViewController {
         if let comment = commentsTextField.text
         {
             dump(post)
-            let ref = self.ref.child("Posts").child(currentUser.uid).child(post!.key!).child("Comments").childByAutoId()
+            let ref = self.ref.child("Posts").child(post!.user!).child(post!.key!).child("Comments").childByAutoId()
             let key = ref.key
             var data: [String: String] = [:]
             data["uid"] = Utils.getUserData()?.uid
@@ -86,7 +86,7 @@ class PostViewController: UIViewController {
             data["key"] = key
             ref.updateChildValues(data)
             data["comment"] = comment
-
+            commentsTextField.text = ""
         }
     }
     
