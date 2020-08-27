@@ -105,4 +105,8 @@ extension SearchViewController: UISearchBarDelegate
         }
         tableview.reloadData()
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 }

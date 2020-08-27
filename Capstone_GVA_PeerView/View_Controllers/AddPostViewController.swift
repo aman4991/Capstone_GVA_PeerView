@@ -35,6 +35,13 @@ class AddPostViewController: UIViewController {
         currentUser = Firebase.Auth.auth().currentUser!
         ref = Database.database().reference()
         storageRef = Storage.storage().reference()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        textView.resignFirstResponder()
     }
     
     func setTapGestures()
