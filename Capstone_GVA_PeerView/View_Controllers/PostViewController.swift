@@ -20,6 +20,8 @@ class PostViewController: UIViewController {
     @IBOutlet weak var ratingBar: AARatingBar!
     var currentUser: User!
     var ref: DatabaseReference!
+    var comments: [Comment] = []
+    let reusableCell = "reusableCell"
 
     var post: Post?
     
@@ -27,6 +29,15 @@ class PostViewController: UIViewController {
         super.viewDidLoad()
         currentUser = FirebaseAuth.Auth.auth().currentUser
         ref = Database.database().reference()
+        ref.child("Posts").child(currentUser.uid).child(post!.key!).child("Comments").observe(.childAdded) { (dataSnapshot) in
+            self.comments.append(Comment(datasnapshot: dataSnapshot.value as! [String: AnyObject]))
+            self.tableview.reloadData()
+        }
+        if post?.user == currentUser.uid
+        {
+            ratingBar.isEnabled = false
+            print("rating disabled")
+        }
         setData()
     }
     
@@ -40,7 +51,7 @@ class PostViewController: UIViewController {
             }
             if let image = p.image
             {
-                downloadImage(from: URL(string: image)!)
+                downloadImage(from: URL(string: image)!, imageView: self.imageView)
             }
             if let rating = p.image as? Double
             {
@@ -84,14 +95,53 @@ class PostViewController: UIViewController {
     }
 
 
-    func downloadImage(from url: URL) {
-        getData(from: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            DispatchQueue.main.async() { [weak self] in
-                self?.imageView.image = UIImage(data: data)
+    func downloadImage(from url: URL?, imageView: UIImageView) {
+        if url != nil
+        {
+            getData(from: url!) { data, response, error in
+                guard let data = data, error == nil else { return }
+                print(response?.suggestedFilename ?? url!.lastPathComponent)
+                DispatchQueue.main.async() { [weak self] in
+                    imageView.image = UIImage(data: data)
+                }
             }
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isToolbarHidden = false
+    }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isToolbarHidden = true
+    }
+
+}
+
+extension PostViewController: UITableViewDelegate, UITableViewDataSource
+{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return comments.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: self.reusableCell)
+
+        if cell == nil
+        {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: self.reusableCell)
+        }
+
+        cell?.textLabel?.text = comments[indexPath.row].comment
+        cell?.detailTextLabel?.text = comments[indexPath.row].name
+        if let imageview = cell?.imageView, let image = comments[indexPath.row].image
+        {
+            downloadImage(from: URL(string: image), imageView: imageview)
+        }
+        return cell!
+    }
+
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
 }
