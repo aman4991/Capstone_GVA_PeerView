@@ -24,7 +24,10 @@ class SearchViewController: UIViewController {
         currentUser = FirebaseAuth.Auth.auth().currentUser
         ref = Database.database().reference()
         ref.child("Users").observe(.childAdded) { (dataSnapshot) in
-            self.userData.append(UserData(datasnapshot: dataSnapshot.value as! [String: AnyObject], uid: dataSnapshot.key))
+            if dataSnapshot.key != Utils.getUserUID()
+            {
+                self.userData.append(UserData(datasnapshot: dataSnapshot.value as! [String: AnyObject], uid: dataSnapshot.key))
+            }
         }
     }
 
