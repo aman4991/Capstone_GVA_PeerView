@@ -16,6 +16,9 @@ class Post
     var lat: String?
     var lng: String?
     var image: String?
+    var rating: String?
+    var user: String?
+    var key: String?
 
     init(datasnapshot: [String: AnyObject]) {
         self.text = datasnapshot["text"] as? String
@@ -23,5 +26,8 @@ class Post
         self.lat = datasnapshot["lat"] as? String
         self.lng = datasnapshot["lng"] as? String
         self.image = datasnapshot["image"] as? String
+        self.rating = datasnapshot["rating"] as? String
+        self.user = datasnapshot["user"] as? String
+        self.key = datasnapshot["key"] as? String
     }
 }

@@ -473,11 +473,8 @@
                                     <action selector="commentClicked:" destination="O4g-h0-qee" eventType="touchUpInside" id="EHG-Ca-0tZ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCD-1Q-Qv4">
-                                <rect key="frame" x="10" y="828" width="301" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="301" id="FGd-M0-hOU"/>
-                                </constraints>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCD-1Q-Qv4" userLabel="I">
+                                <rect key="frame" x="10" y="828" width="311" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -494,16 +491,61 @@
                                 </connections>
                             </button>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4x-FX-UvJ">
-                                <rect key="frame" x="0.0" y="260" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="240" width="414" height="60"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jzq-17-t68">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnQ-tM-mOw">
-                                            <rect key="frame" x="0.0" y="0.0" width="174" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Qi5-VK-cUI">
-                                                <rect key="frame" x="0.0" y="0.0" width="174" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kYE-7t-X1w" customClass="AARatingBar" customModule="AARatingBar">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isEnabled" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                                <integer key="value" value="0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isEnabled" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <vibrancyEffect>
                                                 <blurEffect style="regular"/>
@@ -511,14 +553,14 @@
                                         </visualEffectView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="CnQ-tM-mOw" firstAttribute="centerY" secondItem="jzq-17-t68" secondAttribute="centerY" id="5ri-pw-iEo"/>
-                                        <constraint firstItem="CnQ-tM-mOw" firstAttribute="leading" secondItem="jzq-17-t68" secondAttribute="leading" id="OtQ-8c-QaR"/>
+                                        <constraint firstItem="CnQ-tM-mOw" firstAttribute="top" secondItem="jzq-17-t68" secondAttribute="top" id="cIY-6s-p34"/>
+                                        <constraint firstItem="CnQ-tM-mOw" firstAttribute="leading" secondItem="jzq-17-t68" secondAttribute="leading" id="gJH-m2-VUL"/>
+                                        <constraint firstAttribute="trailing" secondItem="CnQ-tM-mOw" secondAttribute="trailing" id="u8j-tP-Ctf"/>
+                                        <constraint firstAttribute="bottom" secondItem="CnQ-tM-mOw" secondAttribute="bottom" id="vmc-bV-HUH"/>
                                     </constraints>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="CnQ-tM-mOw" firstAttribute="height" secondItem="h4x-FX-UvJ" secondAttribute="height" id="3po-0Y-Bnx"/>
-                                    <constraint firstAttribute="height" constant="40" id="W3R-dP-HA3"/>
-                                    <constraint firstItem="CnQ-tM-mOw" firstAttribute="width" secondItem="h4x-FX-UvJ" secondAttribute="width" multiplier="0.42029" id="i8q-Py-95D"/>
+                                    <constraint firstAttribute="height" constant="60" id="W3R-dP-HA3"/>
                                 </constraints>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
@@ -540,6 +582,7 @@
                             <constraint firstItem="G3F-JK-1H9" firstAttribute="leading" secondItem="YdQ-Ie-WY6" secondAttribute="leading" id="jgQ-6o-kDs"/>
                             <constraint firstItem="kKJ-Y4-otc" firstAttribute="trailing" secondItem="YdQ-Ie-WY6" secondAttribute="trailing" constant="-20" id="mqp-IO-hwJ"/>
                             <constraint firstItem="kKJ-Y4-otc" firstAttribute="bottom" secondItem="YdQ-Ie-WY6" secondAttribute="bottom" id="obv-j0-dn2"/>
+                            <constraint firstItem="kKJ-Y4-otc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XCD-1Q-Qv4" secondAttribute="trailing" constant="8" symbolic="YES" id="p5P-i1-dlV"/>
                             <constraint firstItem="ERL-eC-VPR" firstAttribute="leading" secondItem="YdQ-Ie-WY6" secondAttribute="leading" id="tDK-YC-aJa"/>
                             <constraint firstItem="oKG-el-mXX" firstAttribute="top" secondItem="h4x-FX-UvJ" secondAttribute="bottom" id="tJL-wn-5GG"/>
                             <constraint firstItem="auO-ee-QvB" firstAttribute="top" secondItem="YdQ-Ie-WY6" secondAttribute="top" id="yWB-7A-Zao"/>
@@ -552,6 +595,7 @@
                         <outlet property="commentsTextField" destination="XCD-1Q-Qv4" id="j5E-Th-PWo"/>
                         <outlet property="imageView" destination="G3F-JK-1H9" id="9eb-mh-ufG"/>
                         <outlet property="locationButton" destination="G3F-JK-1H9" id="FwX-Zp-Zoj"/>
+                        <outlet property="ratingBar" destination="kYE-7t-X1w" id="Rz9-Rx-2JQ"/>
                         <outlet property="tableview" destination="ERL-eC-VPR" id="jgu-D5-Bsz"/>
                         <outlet property="textview" destination="oKG-el-mXX" id="bEh-It-j4w"/>
                     </connections>

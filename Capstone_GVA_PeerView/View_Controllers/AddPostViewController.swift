@@ -123,22 +123,19 @@ class AddPostViewController: UIViewController {
             }
             else
             {
+                data["key"] = ref.key
+                data["user"] = FirebaseAuth.Auth.auth().currentUser?.uid
                 ref.setValue(data){ (error, DatabaseReference) in
-                    print(3)
                     guard error == nil else
                     {
-                        print(4)
                         print(error!)
                         return
                     }
-                    print(5)
-                    
                     if self.selectedImageURL != nil
                     {
-                        print(6)
                         self.uploadImageToCloud(ref: ref)
                     }
-                    //                self.navigationController?.popViewController(animated: true)
+                    self.goToDashboard()
                 }
             }
             
@@ -198,10 +195,11 @@ class AddPostViewController: UIViewController {
                     var data: [String: String] = [:]
                     data["image"] = urlString
                     let ref = self.ref.child("Posts").child(self.currentUser.uid).childByAutoId()
+                    data["key"] = ref.key
+                    data["user"] = FirebaseAuth.Auth.auth().currentUser?.uid
                     ref.setValue(data)
+                    self.goToDashboard()
                 })
-                //                self.uploadImageToCloud()
-                //                self.navigationController?.popViewController(animated: true)
             }
         }
     }
@@ -213,6 +211,11 @@ class AddPostViewController: UIViewController {
             mvc.coorindates = self.coordinates
             mvc.locationTitle = self.locationTitle
         }
+    }
+    
+    func goToDashboard()
+    {
+        tabBarController?.selectedIndex = 0
     }
     
 }

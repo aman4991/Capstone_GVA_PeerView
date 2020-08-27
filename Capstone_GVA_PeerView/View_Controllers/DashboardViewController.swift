@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import Firebase
 
 class DashboardViewController: ViewController {
 
+    var currentUser: User!
+    var ref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("dashboard started")
+        currentUser = FirebaseAuth.Auth.auth().currentUser
+        ref = Database.database().reference()
+        ref.child("Users").child(currentUser.uid).observeSingleEvent(of: .value) { (dataSnapshot) in
+            Utils.setUserData(userData: UserData(datasnapshot: dataSnapshot.value as! [String:AnyObject], uid: self.currentUser.uid))
+        }
         // Do any additional setup after loading the view.
     }
     
