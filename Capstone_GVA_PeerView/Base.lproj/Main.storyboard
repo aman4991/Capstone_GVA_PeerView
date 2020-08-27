@@ -966,6 +966,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="113-E5-Gdu">
                                 <rect key="frame" x="0.0" y="388" width="414" height="474"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="LRW-5q-TBG" id="Za5-UY-aHJ"/>
+                                    <outlet property="delegate" destination="LRW-5q-TBG" id="0gT-MW-f8Z"/>
+                                </connections>
                             </tableView>
                             <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZIj-q6-OAR" customClass="AARatingBar" customModule="AARatingBar">
                                 <rect key="frame" x="0.0" y="323" width="414" height="65"/>
@@ -1004,6 +1008,11 @@
                         <viewLayoutGuide key="safeArea" id="1BC-lo-3SN"/>
                     </view>
                     <navigationItem key="navigationItem" id="vKn-kB-sUp"/>
+                    <connections>
+                        <outlet property="imageView" destination="u21-ja-QSH" id="mg9-yS-Zxu"/>
+                        <outlet property="ratingBar" destination="ZIj-q6-OAR" id="Kaa-y5-kqZ"/>
+                        <outlet property="tableView" destination="113-E5-Gdu" id="ved-lC-rrI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tor-Oe-p79" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
