@@ -24,6 +24,7 @@ class UserProfileViewController: UIViewController {
 
     var posts: [Post] = []
     var selectedPost: Post?
+    var alreadyFollowed = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,8 @@ class UserProfileViewController: UIViewController {
             ref.child("Followers").child(userData!.uid).observeSingleEvent(of: .value, with: { (dataSnapshot) in
                 if dataSnapshot.hasChild(Utils.getUserUID())
                 {
-                    self.sendRequestButton.isHidden = true
+                    self.alreadyFollowed = true
+                    self.sendRequestButton.setTitle("Unfollow", for: .normal)
                     self.getPosts()
                 }
                 else
@@ -56,8 +58,18 @@ class UserProfileViewController: UIViewController {
     }
     
     @IBAction func sendRequestTapped(_ sender: Any) {
-        ref.child("Follow Requests").child(userData!.uid).child(Utils.getUserUID()).setValue(Utils.getUserData()!.getUserDataMap())
-        sendRequestButton.setTitle("Request Sent", for: .normal)
+        if alreadyFollowed
+        {
+            ref.child("Followers").child(userData!.uid).child(Utils.getUserUID()).removeValue()
+            ref.child("Followers").child(Utils.getUserUID()).child(userData!.uid).removeValue()
+            self.sendRequestButton.setTitle("Send Request", for: .normal)
+            self.collectionView.isHidden = true
+        }
+        else
+        {
+            ref.child("Follow Requests").child(userData!.uid).child(Utils.getUserUID()).setValue(Utils.getUserData()!.getUserDataMap())
+            sendRequestButton.setTitle("Request Sent", for: .normal)
+        }
     }
     
     func registerCollectionViewCells()
