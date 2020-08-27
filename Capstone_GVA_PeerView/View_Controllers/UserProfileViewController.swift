@@ -31,6 +31,9 @@ class UserProfileViewController: UIViewController {
         setImageView()
         if userData != nil
         {
+            var map = Utils.getUserData()?.getUserDataMap()
+            map!["date"] = getDate()
+            ref.child("Profile_Visited").child(userData!.uid).child(Utils.getUserUID()).setValue(map)
             nameLabel.text = userData?.name
             statusLabel.text = userData?.status
             if let image = userData!.image
@@ -97,6 +100,14 @@ class UserProfileViewController: UIViewController {
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.layer.cornerRadius = imageView.frame.size.width / 2
         imageView.clipsToBounds = true
+    }
+    
+    func getDate() -> String
+    {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        return formatter.string(from: date)
     }
 
 }
