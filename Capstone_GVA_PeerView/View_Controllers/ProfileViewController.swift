@@ -16,6 +16,7 @@ class ProfileViewController: ViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     var coordinates: CLLocationCoordinate2D?
+    var selectedPost: Post?
     
     var ref: DatabaseReference!
     var currentUser: User!
@@ -137,6 +138,11 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
         cell.post = posts[indexPath.row]
         cell.delegate = self
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedPost = posts[indexPath.row]
+        performSegue(withIdentifier: "ownToPost", sender: self)
     }
 }
 

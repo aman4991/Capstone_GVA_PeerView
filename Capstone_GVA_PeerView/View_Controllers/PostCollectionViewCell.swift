@@ -37,7 +37,7 @@ class PostCollectionViewCell: UICollectionViewCell {
                 {
                     downloadImage(from: URL(string: post!.image!)!)
                 }
-                if let lat = post?.lat, let lng = post?.lng
+                if let _ = post?.lat, let _ = post?.lng
                 {
                     locationLabel.text = post?.ltitle
                 }
