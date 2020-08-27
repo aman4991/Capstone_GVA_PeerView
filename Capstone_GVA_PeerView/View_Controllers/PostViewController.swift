@@ -109,11 +109,11 @@ class PostViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isToolbarHidden = false
+        navigationController?.isNavigationBarHidden = false
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.isToolbarHidden = true
+        navigationController?.isNavigationBarHidden = true
     }
 
 }
