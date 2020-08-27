@@ -24,6 +24,32 @@ class ProfileVisitedViewController: UIViewController {
             self.tableview.reloadData()
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+
+
+    func downloadImage(from url: URL?, imageView: UIImageView) {
+        if url != nil
+        {
+            getData(from: url!) { data, response, error in
+                guard let data = data, error == nil else { return }
+                print(response?.suggestedFilename ?? url!.lastPathComponent)
+                DispatchQueue.main.async() { [weak self] in
+                    imageView.image = UIImage(data: data)
+                }
+            }
+        }
+    }
 }
 
 extension ProfileVisitedViewController: UITableViewDelegate, UITableViewDataSource
@@ -48,22 +74,5 @@ extension ProfileVisitedViewController: UITableViewDelegate, UITableViewDataSour
         }
         return cell!
     }
-
-    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-    }
-
-
-    func downloadImage(from url: URL?, imageView: UIImageView) {
-        if url != nil
-        {
-            getData(from: url!) { data, response, error in
-                guard let data = data, error == nil else { return }
-                print(response?.suggestedFilename ?? url!.lastPathComponent)
-                DispatchQueue.main.async() { [weak self] in
-                    imageView.image = UIImage(data: data)
-                }
-            }
-        }
-    }
+    
 }
