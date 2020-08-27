@@ -495,29 +495,17 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKJ-Y4-otc">
-                                <rect key="frame" x="329" y="832" width="65" height="30"/>
+                                <rect key="frame" x="121" y="832" width="65" height="30"/>
                                 <state key="normal" title="comment"/>
                                 <connections>
                                     <action selector="commentClicked:" destination="O4g-h0-qee" eventType="touchUpInside" id="EHG-Ca-0tZ"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCD-1Q-Qv4" userLabel="commentTextField">
-                                <rect key="frame" x="20" y="828" width="299" height="34"/>
+                                <rect key="frame" x="20" y="828" width="91" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auO-ee-QvB">
-                                <rect key="frame" x="366" y="88.5" width="28" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="28" id="MSt-vI-eI5"/>
-                                    <constraint firstAttribute="height" constant="28" id="zWZ-sr-Lwb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" backgroundImage="location" catalog="system"/>
-                                <connections>
-                                    <action selector="locationClicked:" destination="O4g-h0-qee" eventType="touchUpInside" id="3xA-KJ-GOA"/>
-                                </connections>
-                            </button>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4x-FX-UvJ">
                                 <rect key="frame" x="0.0" y="240" width="414" height="60"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jzq-17-t68">
@@ -602,10 +590,8 @@
                             <constraint firstItem="ERL-eC-VPR" firstAttribute="trailing" secondItem="YdQ-Ie-WY6" secondAttribute="trailing" id="7uG-Ou-ULW"/>
                             <constraint firstItem="oKG-el-mXX" firstAttribute="leading" secondItem="YdQ-Ie-WY6" secondAttribute="leading" id="8VK-oE-b9c"/>
                             <constraint firstItem="ERL-eC-VPR" firstAttribute="top" secondItem="oKG-el-mXX" secondAttribute="bottom" id="NGW-Zj-P24"/>
-                            <constraint firstItem="kKJ-Y4-otc" firstAttribute="trailing" secondItem="auO-ee-QvB" secondAttribute="trailing" id="VZw-9Y-3dG"/>
                             <constraint firstItem="oKG-el-mXX" firstAttribute="trailing" secondItem="YdQ-Ie-WY6" secondAttribute="trailing" id="amI-rN-NYN"/>
                             <constraint firstItem="XCD-1Q-Qv4" firstAttribute="leading" secondItem="YdQ-Ie-WY6" secondAttribute="leading" constant="20" id="bem-rL-8Ko"/>
-                            <constraint firstItem="YdQ-Ie-WY6" firstAttribute="trailing" secondItem="auO-ee-QvB" secondAttribute="trailing" constant="20" id="cgU-gf-5bc"/>
                             <constraint firstItem="G3F-JK-1H9" firstAttribute="top" secondItem="QXE-zO-taQ" secondAttribute="top" id="dGQ-1f-LNk"/>
                             <constraint firstItem="oKG-el-mXX" firstAttribute="top" secondItem="G3F-JK-1H9" secondAttribute="bottom" id="ddm-CK-wpH"/>
                             <constraint firstItem="kKJ-Y4-otc" firstAttribute="top" secondItem="ERL-eC-VPR" secondAttribute="bottom" constant="14" id="egD-NP-im6"/>
@@ -613,12 +599,17 @@
                             <constraint firstItem="kKJ-Y4-otc" firstAttribute="bottom" secondItem="YdQ-Ie-WY6" secondAttribute="bottom" id="oNj-0i-10A"/>
                             <constraint firstItem="ERL-eC-VPR" firstAttribute="leading" secondItem="YdQ-Ie-WY6" secondAttribute="leading" id="tDK-YC-aJa"/>
                             <constraint firstItem="oKG-el-mXX" firstAttribute="top" secondItem="h4x-FX-UvJ" secondAttribute="bottom" id="tJL-wn-5GG"/>
-                            <constraint firstItem="auO-ee-QvB" firstAttribute="top" secondItem="YdQ-Ie-WY6" secondAttribute="top" id="yWB-7A-Zao"/>
                             <constraint firstItem="YdQ-Ie-WY6" firstAttribute="trailing" secondItem="G3F-JK-1H9" secondAttribute="trailing" id="zhN-A6-gMX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YdQ-Ie-WY6"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pcK-dh-Xqr"/>
+                    <navigationItem key="navigationItem" id="pcK-dh-Xqr">
+                        <barButtonItem key="rightBarButtonItem" image="location" catalog="system" id="ifl-Kk-xsB">
+                            <connections>
+                                <action selector="locationClicked:" destination="O4g-h0-qee" id="Dxm-sV-UHZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="commentsTextField" destination="XCD-1Q-Qv4" id="j5E-Th-PWo"/>
                         <outlet property="imageView" destination="G3F-JK-1H9" id="9eb-mh-ufG"/>
@@ -626,6 +617,7 @@
                         <outlet property="ratingBar" destination="kYE-7t-X1w" id="Rz9-Rx-2JQ"/>
                         <outlet property="tableview" destination="ERL-eC-VPR" id="jgu-D5-Bsz"/>
                         <outlet property="textview" destination="oKG-el-mXX" id="bEh-It-j4w"/>
+                        <segue destination="b7N-5p-sBS" kind="show" identifier="postToMap" id="F2T-jE-9IA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tG6-N0-vis" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1016,7 +1008,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wpz-DM-dDi"/>
+        <segue reference="F2T-jE-9IA"/>
         <segue reference="Inx-MO-fih"/>
     </inferredMetricsTieBreakers>
     <resources>
