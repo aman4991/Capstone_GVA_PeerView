@@ -16,3 +16,7 @@ protocol Callbacks {
 protocol ToMove {
     func moveToMap(coordinates: CLLocationCoordinate2D)
 }
+
+protocol FollowRequestOperations {
+    func removeRequest(at: IndexPath)
+}

@@ -13,13 +13,9 @@ class RequestTableViewCell: UITableViewCell {
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    var userData: UserData?
-    var ref: DatabaseReference!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        ref = Database.database().reference()
-        if userData != nil
+    var userData: UserData!
+    {
+        didSet
         {
             nameLabel.text = userData!.name
             if let image = userData?.image
@@ -27,6 +23,15 @@ class RequestTableViewCell: UITableViewCell {
                 downloadImage(from: URL(string: image), imageView: profileImageView)
             }
         }
+    }
+    
+    var index: IndexPath!
+    var delegate: FollowRequestOperations?
+    var ref: DatabaseReference!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        ref = Database.database().reference()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,9 +42,11 @@ class RequestTableViewCell: UITableViewCell {
     @IBAction func acceptButton(_ sender: Any) {
         ref.child("Followers").child(Utils.getUserUID()).child(userData!.uid).setValue(userData?.getUserDataMap())
         ref.child("Follow Requests").child(Utils.getUserUID()).child(userData!.uid).removeValue()
+        delegate?.removeRequest(at: index)
     }
     @IBAction func declineTapped(_ sender: Any) {
         ref.child("Follow Requests").child(Utils.getUserUID()).child(userData!.uid).removeValue()
+        delegate?.removeRequest(at: index)
     }
 
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {

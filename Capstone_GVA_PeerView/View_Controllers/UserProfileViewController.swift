@@ -109,6 +109,14 @@ class UserProfileViewController: UIViewController {
         formatter.dateFormat = "dd.MM.yyyy"
         return formatter.string(from: date)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
 
 }
 
