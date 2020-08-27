@@ -56,7 +56,6 @@ class PostCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        dump(self.frame.width)
     }
     
     @IBAction func showLocationTapped(_ sender: Any) {

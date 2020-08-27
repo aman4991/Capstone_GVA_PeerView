@@ -12,7 +12,7 @@ import Firebase
 import MapKit
 
 class PostViewController: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var locationButton: UIImageView!
     @IBOutlet weak var textview: UITextView!
@@ -23,7 +23,10 @@ class PostViewController: UIViewController {
     var ref: DatabaseReference!
     var comments: [Comment] = []
     let reusableCell = "reusableCell"
-
+    var rating: CGFloat = 0
+    var total: CGFloat = 0
+    var ratings: Int = 0
+    
     var post: Post?
     
     override func viewDidLoad() {
@@ -34,10 +37,26 @@ class PostViewController: UIViewController {
             self.comments.append(Comment(datasnapshot: dataSnapshot.value as! [String: AnyObject]))
             self.tableview.reloadData()
         }
+        if post?.user == Utils.getUserUID()
+        {
+            ref.child("Posts").child(post!.user!).child(post!.key!).child("Ratings").observe(.childAdded) { (dataSnapshot) in
+                self.ratings += 1
+                self.total += ((dataSnapshot.value as! [String:AnyObject])["rating"] as! String).CGFloatValue()!
+                self.rating = self.total / CGFloat(self.ratings)
+                print(self.rating)
+                self.ratingBar.value = self.rating
+            }
+        }
+        else
+        {
+            ref.child("Posts").child(post!.user!).child(post!.key!).child("Ratings").child(Utils.getUserUID()).observeSingleEvent(of: .value) { (dataSnapshot) in
+                let val = ((dataSnapshot.value as! [String:AnyObject])["rating"] as! String).CGFloatValue()!
+                self.ratingBar.value = val
+            }
+        }
         if post?.user == currentUser.uid
         {
             ratingBar.isEnabled = false
-            print("rating disabled")
         }
         if post?.lat == nil
         {
@@ -59,13 +78,9 @@ class PostViewController: UIViewController {
             {
                 downloadImage(from: URL(string: image)!, imageView: self.imageView)
             }
-            if let rating = p.image as? Double
-            {
-                ratingBar.value = CGFloat(rating)
-            }
             if let _ = p.lat, let _ = p.lng
             {
-
+                
             }
             else
             {
@@ -73,12 +88,12 @@ class PostViewController: UIViewController {
             }
         }
     }
-
-
+    
+    
     @IBAction func locationClicked(_ sender: Any) {
         performSegue(withIdentifier: "postToMap", sender: self)
     }
-
+    
     @IBAction func commentClicked(_ sender: Any) {
         if let comment = commentsTextField.text
         {
@@ -99,8 +114,8 @@ class PostViewController: UIViewController {
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
-
-
+    
+    
     func downloadImage(from url: URL?, imageView: UIImageView) {
         if url != nil
         {
@@ -117,7 +132,7 @@ class PostViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
@@ -133,7 +148,7 @@ class PostViewController: UIViewController {
     {
         var map = Utils.getUserData()?.getUserDataMap()
         map!["rating"] = "\(rating)"
-        ref.child("Posts").child(post!.user!).child(post!.key!).child(Utils.getUserUID()).setValue(map)
+        ref.child("Posts").child(post!.user!).child(post!.key!).child("Ratings").child(Utils.getUserUID()).setValue(map)
     }
 }
 
@@ -142,15 +157,15 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return comments.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: self.reusableCell)
-
+        
         if cell == nil
         {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: self.reusableCell)
         }
-
+        
         cell?.textLabel?.text = comments[indexPath.row].comment
         cell?.detailTextLabel?.text = comments[indexPath.row].name
         if let imageview = cell?.imageView, let image = comments[indexPath.row].image
@@ -163,7 +178,7 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource
         }
         return cell!
     }
-
+    
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return false
     }
@@ -172,5 +187,13 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource
 extension String {
     func toDouble() -> Double? {
         return NumberFormatter().number(from: self)?.doubleValue
+    }
+    
+    func CGFloatValue() -> CGFloat? {
+        guard let doubleValue = Double(self) else {
+            return nil
+        }
+        
+        return CGFloat(doubleValue)
     }
 }
