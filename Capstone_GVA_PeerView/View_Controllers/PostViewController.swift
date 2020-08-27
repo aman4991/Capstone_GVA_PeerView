@@ -57,6 +57,7 @@ class PostViewController: UIViewController {
         if post?.user == currentUser.uid
         {
             ratingBar.isEnabled = false
+            setTapGestures()
         }
         if post?.lat == nil
         {
@@ -87,6 +88,19 @@ class PostViewController: UIViewController {
                 locationButton.isHidden = true
             }
         }
+    }
+    
+    func setTapGestures()
+    {
+        let ratingBarTap = UITapGestureRecognizer(target: self, action: #selector(ratingBarTapped))
+        ratingBar.isUserInteractionEnabled = true
+        ratingBar.addGestureRecognizer(ratingBarTap)
+    }
+
+
+    @objc func ratingBarTapped()
+    {
+
     }
     
     
