@@ -24,6 +24,8 @@
 		7D08BCE824F7363700B5DD1E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCE724F7363700B5DD1E /* Comment.swift */; };
 		7D08BCEA24F7373800B5DD1E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCE924F7373800B5DD1E /* SearchViewController.swift */; };
 		7D08BCEC24F7387400B5DD1E /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCEB24F7387400B5DD1E /* UserProfileViewController.swift */; };
+		7D08BCF124F73C5500B5DD1E /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D08BCEF24F73C5500B5DD1E /* RequestTableViewCell.swift */; };
+		7D08BCF224F73C5500B5DD1E /* RequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D08BCF024F73C5500B5DD1E /* RequestTableViewCell.xib */; };
 		7D1087CE24E5D94E005692C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CD24E5D94E005692C9 /* AppDelegate.swift */; };
 		7D1087D024E5D94E005692C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */; };
 		7D1087D224E5D94E005692C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1087D124E5D94E005692C9 /* ViewController.swift */; };
@@ -76,6 +78,8 @@
 		7D08BCE724F7363700B5DD1E /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		7D08BCE924F7373800B5DD1E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7D08BCEB24F7387400B5DD1E /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		7D08BCEF24F73C5500B5DD1E /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
+		7D08BCF024F73C5500B5DD1E /* RequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestTableViewCell.xib; sourceTree = "<group>"; };
 		7D1087CA24E5D94E005692C9 /* Capstone_GVA_PeerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone_GVA_PeerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1087CD24E5D94E005692C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				7D08BCE124F7304700B5DD1E /* PostViewController.swift */,
 				7D08BCE924F7373800B5DD1E /* SearchViewController.swift */,
 				7D08BCEB24F7387400B5DD1E /* UserProfileViewController.swift */,
+				7D08BCEF24F73C5500B5DD1E /* RequestTableViewCell.swift */,
 			);
 			path = View_Controllers;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 				7D1087CD24E5D94E005692C9 /* AppDelegate.swift */,
 				7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */,
 				7D08BCDC24F7296F00B5DD1E /* PostCollectionViewCell.xib */,
+				7D08BCF024F73C5500B5DD1E /* RequestTableViewCell.xib */,
 				7D1087D324E5D94E005692C9 /* Main.storyboard */,
 				7D1087D924E5D950005692C9 /* Assets.xcassets */,
 				7D1087DB24E5D950005692C9 /* LaunchScreen.storyboard */,
@@ -340,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D1087DD24E5D950005692C9 /* LaunchScreen.storyboard in Resources */,
+				7D08BCF224F73C5500B5DD1E /* RequestTableViewCell.xib in Resources */,
 				7D08BCD324F71AC900B5DD1E /* GoogleService-Info.plist in Resources */,
 				7D1087DA24E5D950005692C9 /* Assets.xcassets in Resources */,
 				7D1087D524E5D94E005692C9 /* Main.storyboard in Resources */,
@@ -472,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D08BCD924F722D500B5DD1E /* MapViewController.swift in Sources */,
+				7D08BCF124F73C5500B5DD1E /* RequestTableViewCell.swift in Sources */,
 				7D08BCCD24F7181E00B5DD1E /* ProfileViewController.swift in Sources */,
 				7D08BCEC24F7387400B5DD1E /* UserProfileViewController.swift in Sources */,
 				7D08BCE624F7325B00B5DD1E /* UserData.swift in Sources */,
