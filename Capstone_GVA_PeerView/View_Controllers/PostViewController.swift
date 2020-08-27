@@ -65,6 +65,12 @@ class PostViewController: UIViewController {
         }
         setData()
         ratingBar.ratingDidChange = ratingValue(_:)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        commentsTextField.resignFirstResponder()
     }
     
     func setData()
@@ -210,5 +216,13 @@ extension String {
         }
         
         return CGFloat(doubleValue)
+    }
+}
+
+extension PostViewController: UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

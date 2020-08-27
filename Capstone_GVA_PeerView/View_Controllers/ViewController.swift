@@ -22,7 +22,13 @@ class ViewController: UIViewController {
             ViewController.send = false
             moveToDashboard()
         }
-        // Do any additional setup after loading the view.
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
     }
     
     @IBAction func signInClicked(_ sender: Any) {
@@ -118,5 +124,13 @@ extension UITextField{
     @objc func doneButtonAction()
     {
         self.resignFirstResponder()
+    }
+}
+
+extension ViewController: UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
