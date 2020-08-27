@@ -10,6 +10,7 @@ import UIKit
 import AARatingBar
 import Firebase
 import MapKit
+import AVKit
 
 class PostViewController: UIViewController {
     
@@ -105,6 +106,15 @@ class PostViewController: UIViewController {
     
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
         commentsTextField.resignFirstResponder()
+    }
+    
+    @IBAction func playTapped(_ sender: Any) {
+        let player = AVPlayer(url: URL(string: post!.video!)!)
+
+        let vc = AVPlayerViewController()
+        vc.player = player
+
+        self.present(vc, animated: true) { vc.player?.play() }
     }
     
     @IBAction func deleteButtonTapped(_ sender: Any) {

@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     static var send = true
+    var tapGesture: UIGestureRecognizer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,15 +23,13 @@ class ViewController: UIViewController {
             ViewController.send = false
             moveToDashboard()
         }
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
-        self.view.addGestureRecognizer(tapGesture)
     }
     
-    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
-        
-        emailTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
-    }
+//    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+//
+//        emailTextField.resignFirstResponder()
+//        passwordTextField.resignFirstResponder()
+//    }
     
     @IBAction func signInClicked(_ sender: Any) {
         let email = emailTextField.text
@@ -88,11 +87,14 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
-        
+//        self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+//        self.view.addGestureRecognizer(self.tapGesture!)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
+//        self.view.removeGestureRecognizer(self.tapGesture!)
+//        self.tapGesture = nil
     }
 }
 

@@ -97,16 +97,18 @@ class AddPostViewController: UIViewController {
     
     func playVideo()
     {
-        //        if let videoURL = videoURL{
-        //            let player = AVPlayer(url: videoURL as URL)
-        //
-        //            let playerViewController = AVPlayerViewController()
-        //            playerViewController.player = player
-        //
-        //            present(playerViewController, animated: true) {
-        //                playerViewController.player!.play()
-        //            }
-        //        }
+        let cacheURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent("dummy.mp4")
+        
+        do {
+            try self.videoData!.write(to: cacheURL, options: .atomicWrite)
+        } catch {
+            print("Failed with error:", error.localizedDescription)
+        }
+        let player = AVPlayer(url: cacheURL)
+        let vcPlayer = AVPlayerViewController()
+        vcPlayer.player = player
+        vcPlayer.player?.play()
+        present(vcPlayer, animated: true, completion: nil)
     }
     
     func uploadImageToCloud(ref reference: DatabaseReference?)
