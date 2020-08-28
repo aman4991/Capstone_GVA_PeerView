@@ -30,7 +30,7 @@
         <!--View Controller-->
         <scene sceneID="C12-gY-8ay">
             <objects>
-                <viewController id="ghf-FN-2Hn" customClass="ViewController" customModule="Capstone_GVA_PeerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ghf-FN-2Hn" customClass="ViewController" customModule="PeerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DrY-gd-15f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,7 +115,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="S7T-7q-ynR">
             <objects>
-                <viewController id="ZUl-xV-PvQ" customClass="SignUpViewController" customModule="Capstone_GVA_PeerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZUl-xV-PvQ" customClass="SignUpViewController" customModule="PeerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dAE-RW-8zz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -243,7 +243,7 @@
         <!--Search-->
         <scene sceneID="AMV-xe-Cms">
             <objects>
-                <viewController id="dbm-UH-R0e" customClass="SearchViewController" customModule="Capstone_GVA_PeerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dbm-UH-R0e" customClass="SearchViewController" customModule="PeerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Zh-PM-Wy9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,7 +289,7 @@
         <!--Add Post-->
         <scene sceneID="FkZ-KD-PVT">
             <objects>
-                <viewController id="SU0-7z-ltf" customClass="AddPostViewController" customModule="Capstone_GVA_PeerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SU0-7z-ltf" customClass="AddPostViewController" customModule="PeerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fom-Gm-mnT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -311,7 +311,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Post"/>
                                 <connections>
-                                    <action selector="postTapped:" destination="SU0-7z-ltf" eventType="touchUpInside" id="ai5-TY-9e1"/>
+                                    <action selector="postTapped:" destination="SU0-7z-ltf" eventType="touchUpInside" id="n2G-t8-vyL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2G-5A-dHg">
@@ -381,7 +381,7 @@
         <!--My Profile-->
         <scene sceneID="hz1-6d-lLC">
             <objects>
-                <viewController id="xju-l7-8kF" customClass="ProfileViewController" customModule="Capstone_GVA_PeerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xju-l7-8kF" customClass="ProfileViewController" customModule="PeerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="crb-64-3Vh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -493,7 +493,7 @@
         <!--Post View Controller-->
         <scene sceneID="GCk-a3-c4O">
             <objects>
-                <viewController id="O4g-h0-qee" customClass="PostViewController" customModule="Capstone_GVA_PeerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="O4g-h0-qee" customClass="PostViewController" customModule="PeerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QXE-zO-taQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -642,7 +642,7 @@
         <!--Settings View Controller-->
         <scene sceneID="a3a-vJ-iNQ">
             <objects>
-                <viewController id="Ta1-fL-xW5" customClass="SettingsViewController" customModule="Capstone_GVA_PeerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ta1-fL-xW5" customClass="SettingsViewController" customModule="PeerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o5e-qD-iP5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -758,7 +758,7 @@
         <!--Map View Controller-->
         <scene sceneID="dh2-aN-6lH">
             <objects>
-                <viewController id="b7N-5p-sBS" customClass="MapViewController" customModule="Capstone_GVA_PeerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="b7N-5p-sBS" customClass="MapViewController" customModule="PeerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CgW-fo-nLM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -795,7 +795,7 @@
         <!--Profile Visited View Controller-->
         <scene sceneID="gUU-cN-u0N">
             <objects>
-                <viewController id="XDP-HY-Gvd" customClass="ProfileVisitedViewController" customModule="Capstone_GVA_PeerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XDP-HY-Gvd" customClass="ProfileVisitedViewController" customModule="PeerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rS6-4I-p7N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -830,7 +830,7 @@
         <!--Follow Requests View Controller-->
         <scene sceneID="VOa-BK-TVU">
             <objects>
-                <viewController id="zLb-q5-hOD" customClass="FollowRequestsViewController" customModule="Capstone_GVA_PeerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zLb-q5-hOD" customClass="FollowRequestsViewController" customModule="PeerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pbo-R2-4qB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -865,7 +865,7 @@
         <!--Dashboard-->
         <scene sceneID="A3g-NA-0tM">
             <objects>
-                <viewController id="VUn-EA-Gkx" customClass="DashboardViewController" customModule="Capstone_GVA_PeerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VUn-EA-Gkx" customClass="DashboardViewController" customModule="PeerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xee-X6-F8q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -919,7 +919,7 @@
         <!--User Profile-->
         <scene sceneID="4k9-Us-25q">
             <objects>
-                <viewController id="yn8-BH-bAs" userLabel="User Profile" customClass="UserProfileViewController" customModule="Capstone_GVA_PeerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yn8-BH-bAs" userLabel="User Profile" customClass="UserProfileViewController" customModule="PeerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vtN-7B-rZG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1016,7 +1016,7 @@
         <!--Rating View Controller-->
         <scene sceneID="QaT-sP-drO">
             <objects>
-                <viewController id="LRW-5q-TBG" customClass="RatingViewController" customModule="Capstone_GVA_PeerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LRW-5q-TBG" customClass="RatingViewController" customModule="PeerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="obq-8I-1Pk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1134,7 +1134,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="F2T-jE-9IA"/>
+        <segue reference="ylK-gf-lQU"/>
         <segue reference="fnv-LQ-5oJ"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -90,7 +90,7 @@
 		7D08BCF824F73FFF00B5DD1E /* ProfileVisitedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVisitedViewController.swift; sourceTree = "<group>"; };
 		7D08BCFA24F74C7A00B5DD1E /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		7D08BCFC24F74E3A00B5DD1E /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
-		7D1087CA24E5D94E005692C9 /* Capstone_GVA_PeerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone_GVA_PeerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D1087CA24E5D94E005692C9 /* PeerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1087CD24E5D94E005692C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D1087CF24E5D94E005692C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7D1087D124E5D94E005692C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 		7D1087CB24E5D94E005692C9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7D1087CA24E5D94E005692C9 /* Capstone_GVA_PeerView.app */,
+				7D1087CA24E5D94E005692C9 /* PeerView.app */,
 				7D1087E324E5D950005692C9 /* Capstone_GVA_PeerViewTests.xctest */,
 				7D1087EE24E5D950005692C9 /* Capstone_GVA_PeerViewUITests.xctest */,
 			);
@@ -278,7 +278,7 @@
 			);
 			name = Capstone_GVA_PeerView;
 			productName = Capstone_GVA_PeerView;
-			productReference = 7D1087CA24E5D94E005692C9 /* Capstone_GVA_PeerView.app */;
+			productReference = 7D1087CA24E5D94E005692C9 /* PeerView.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7D1087E224E5D950005692C9 /* Capstone_GVA_PeerViewTests */ = {
@@ -706,7 +706,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "varinder.Capstone-GVA-PeerView";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PeerView;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -724,7 +724,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "varinder.Capstone-GVA-PeerView";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PeerView;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

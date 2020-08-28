@@ -176,8 +176,8 @@ class PostViewController: UIViewController {
             data["name"] = Utils.getUserData()?.name
             data["image"] = Utils.getUserData()?.image
             data["key"] = key
-            ref.updateChildValues(data)
             data["comment"] = comment
+            ref.updateChildValues(data)
             commentsTextField.text = ""
         }
     }

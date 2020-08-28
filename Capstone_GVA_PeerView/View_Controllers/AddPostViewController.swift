@@ -55,6 +55,54 @@ class AddPostViewController: UIViewController {
         imageView.addGestureRecognizer(imageTap)
     }
     
+    @IBAction func postTapped(_ sender: Any) {
+        if textView.text != "" || selectedImageURL != nil || coordinates != nil || videoData != nil
+        {
+            var data: [String: String] = [:]
+            if textView.text != ""
+            {
+                data["text"] = textView.text
+            }
+            if let c = coordinates
+            {
+                data["lat"] = String(c.latitude)
+                data["lng"] = String(c.longitude)
+                data["ltitle"] = locationTitle!
+            }
+            let ref = self.ref.child("Posts").child(currentUser.uid).childByAutoId()
+            if data.isEmpty
+            {
+                print("found empty")
+                if self.selectedImageURL != nil || self.videoData != nil
+                {
+                    self.hasImage = self.selectedImageURL != nil
+                    self.hasVideo = self.videoData != nil
+                    self.uploadImageToCloud(ref: nil)
+                }
+            }
+            else
+            {
+                print("not empty")
+                data["key"] = ref.key
+                data["user"] = FirebaseAuth.Auth.auth().currentUser?.uid
+                ref.setValue(data){ (error, DatabaseReference) in
+                    guard error == nil else
+                    {
+                        print(error!)
+                        return
+                    }
+                    if self.selectedImageURL != nil || self.videoData != nil
+                    {
+                        self.hasImage = self.selectedImageURL != nil
+                        self.hasVideo = self.videoData != nil
+                        self.uploadImageToCloud(ref: ref)
+                    }
+                    self.goToDashboard()
+                }
+            }
+            
+        }
+    }
     @objc func imageTapped() {
         let image = UIImagePickerController()
         image.delegate = self
@@ -114,10 +162,12 @@ class AddPostViewController: UIViewController {
     func uploadImageToCloud(ref reference: DatabaseReference?)
     {
         print("called uploadImageToCloud")
+        dump(reference)
         if self.hasImage
         {
             if let ref = reference
             {
+                print("reference found")
                 let data = self.selectedImage!.jpegData(compressionQuality: 0.5)! as NSData
                 let photoRef = self.storageRef.child("post_images").child("\(ref.key!).png")
                 photoRef.putData(data as Data, metadata: nil){ (metadata, err) in
@@ -153,6 +203,7 @@ class AddPostViewController: UIViewController {
             }
             else
             {
+                print("reference not found")
                 let data = self.selectedImage!.jpegData(compressionQuality: 0.5)! as NSData
                 let photoRef = self.storageRef.child("post_images").child("\(UUID().uuidString).png")
                 print("photoRef: \(photoRef)")
@@ -191,7 +242,7 @@ class AddPostViewController: UIViewController {
                 }
             }
         }
-        else if self.hasVideo
+        if self.hasVideo
         {
             print("has video")
             self.uploadVideoToCloud(ref: reference)
