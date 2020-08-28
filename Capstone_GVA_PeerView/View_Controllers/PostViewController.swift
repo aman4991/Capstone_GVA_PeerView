@@ -99,7 +99,10 @@ class PostViewController: UIViewController {
             self.navigationItem.rightBarButtonItems = nil
         }
         setData()
-        ratingBar.ratingDidChange = ratingValue(_:)
+        if post?.user != currentUser.uid
+        {
+            ratingBar.ratingDidChange = ratingValue(_:)
+        }
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
     }

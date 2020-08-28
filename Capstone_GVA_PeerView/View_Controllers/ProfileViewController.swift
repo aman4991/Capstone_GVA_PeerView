@@ -61,6 +61,26 @@ class ProfileViewController: ViewController {
             }
             self.collectionView.reloadData()
         }
+        
+        ref1.observe(.childChanged) { (dataSnapshot) in
+            print("dataSnapshot: \(dataSnapshot)")
+            if let map = dataSnapshot.value as? [String:AnyObject]
+            {
+                let p = Post(datasnapshot: map)
+                var index = 0
+                for post in self.posts
+                {
+                    if p.equals(post: post)
+                    {
+                        self.posts.remove(at: index)
+                        self.posts.append(p)
+                        self.collectionView.reloadData()
+                    }
+                    index+=1
+                }
+            }
+            self.collectionView.reloadData()
+        }
     }
     
     func setTapGestures()
