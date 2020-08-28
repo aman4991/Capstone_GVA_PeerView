@@ -166,9 +166,8 @@ class PostViewController: UIViewController {
     }
     
     @IBAction func commentClicked(_ sender: Any) {
-        if let comment = commentsTextField.text
+        if let comment = commentsTextField.text, comment != ""
         {
-            dump(post)
             let ref = self.ref.child("Posts").child(post!.user!).child(post!.key!).child("Comments").childByAutoId()
             let key = ref.key
             var data: [String: String] = [:]
