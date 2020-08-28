@@ -99,6 +99,7 @@ class AddPostViewController: UIViewController {
                     }
                     self.goToDashboard()
                 }
+                textView.text == ""
             }
             
         }

@@ -258,7 +258,7 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource
         cell?.textLabel?.text = comments[indexPath.row].comment
         cell?.detailTextLabel?.text = comments[indexPath.row].name
         cell?.imageView?.image = UIImage(named: "profile_placeholder")
-        if let imageview = cell?.imageView, let image = comments[indexPath.row].image
+        if let imageview = cell?.imageView, let image = comments[indexPath.row].image, image != ""
         {
             downloadImage(from: URL(string: image)!, imageview: imageview)
         }
