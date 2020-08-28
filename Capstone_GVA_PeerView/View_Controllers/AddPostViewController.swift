@@ -99,7 +99,8 @@ class AddPostViewController: UIViewController {
                     }
                     self.goToDashboard()
                 }
-                textView.text == ""
+                textView.text = ""
+                coordinates = nil
             }
             
         }
